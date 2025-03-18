@@ -1,0 +1,2246 @@
+2025-03-16 16:52:25.740 ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.model.processor.ImplicitModelHandler - Could not create component [layout] of type [ch.qos.logback.contrib.json.classic.JsonLayout] java.lang.ClassNotFoundException: ch.qos.logback.contrib.json.classic.JsonLayout
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:347)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:298)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:246)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:223)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:185)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:178)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:156)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:138)
+	at org.springframework.boot.context.event.EventPublishingRunListener.multicastInitialEvent(EventPublishingRunListener.java:136)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:81)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:64)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:118)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:112)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:63)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:353)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:313)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.application.arcagambling.ArcaGamblingApplication.main(ArcaGamblingApplication.java:12)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.model.processor.ImplicitModelHandler - Could not create component [layout] of type [ch.qos.logback.contrib.json.classic.JsonLayout] java.lang.ClassNotFoundException: ch.qos.logback.contrib.json.classic.JsonLayout
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.reportConfigurationErrorsIfNecessary(LogbackLoggingSystem.java:291)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:269)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.reinitialize(LogbackLoggingSystem.java:344)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:74)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:61)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:197)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:332)
+	... 24 common frames omitted
+	Suppressed: java.lang.ClassNotFoundException: ch.qos.logback.contrib.json.classic.JsonLayout
+		at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+		at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+		at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+		at ch.qos.logback.core.util.Loader.loadClass(Loader.java:132)
+		at ch.qos.logback.core.model.processor.ImplicitModelHandler.doComplex(ImplicitModelHandler.java:134)
+		at ch.qos.logback.core.model.processor.ImplicitModelHandler.handle(ImplicitModelHandler.java:94)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.secondPhaseTraverse(DefaultProcessor.java:241)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.secondPhaseTraverse(DefaultProcessor.java:253)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.secondPhaseTraverse(DefaultProcessor.java:253)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.secondPhaseTraverse(DefaultProcessor.java:253)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.traversalLoop(DefaultProcessor.java:90)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.process(DefaultProcessor.java:106)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.processModel(GenericXMLConfigurator.java:222)
+		at org.springframework.boot.logging.logback.SpringBootJoranConfigurator.processModel(SpringBootJoranConfigurator.java:136)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.doConfigure(GenericXMLConfigurator.java:178)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.doConfigure(GenericXMLConfigurator.java:123)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.doConfigure(GenericXMLConfigurator.java:66)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.configureByResourceUrl(LogbackLoggingSystem.java:300)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.lambda$loadConfiguration$2(LogbackLoggingSystem.java:262)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.withLoggingSuppressed(LogbackLoggingSystem.java:483)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:255)
+		... 29 common frames omitted
+2025-03-16 16:52:34.271 ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.model.processor.ImplicitModelHandler - Could not create component [layout] of type [ch.qos.logback.contrib.json.classic.JsonLayout] java.lang.ClassNotFoundException: ch.qos.logback.contrib.json.classic.JsonLayout
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:347)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:298)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:246)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:223)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:185)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:178)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:156)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:138)
+	at org.springframework.boot.context.event.EventPublishingRunListener.multicastInitialEvent(EventPublishingRunListener.java:136)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:81)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:64)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:118)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:112)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:63)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:353)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:313)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.application.arcagambling.ArcaGamblingApplication.main(ArcaGamblingApplication.java:12)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.model.processor.ImplicitModelHandler - Could not create component [layout] of type [ch.qos.logback.contrib.json.classic.JsonLayout] java.lang.ClassNotFoundException: ch.qos.logback.contrib.json.classic.JsonLayout
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.reportConfigurationErrorsIfNecessary(LogbackLoggingSystem.java:291)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:269)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.reinitialize(LogbackLoggingSystem.java:344)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:74)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:61)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:197)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:332)
+	... 24 common frames omitted
+	Suppressed: java.lang.ClassNotFoundException: ch.qos.logback.contrib.json.classic.JsonLayout
+		at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+		at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+		at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+		at ch.qos.logback.core.util.Loader.loadClass(Loader.java:132)
+		at ch.qos.logback.core.model.processor.ImplicitModelHandler.doComplex(ImplicitModelHandler.java:134)
+		at ch.qos.logback.core.model.processor.ImplicitModelHandler.handle(ImplicitModelHandler.java:94)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.secondPhaseTraverse(DefaultProcessor.java:241)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.secondPhaseTraverse(DefaultProcessor.java:253)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.secondPhaseTraverse(DefaultProcessor.java:253)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.secondPhaseTraverse(DefaultProcessor.java:253)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.traversalLoop(DefaultProcessor.java:90)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.process(DefaultProcessor.java:106)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.processModel(GenericXMLConfigurator.java:222)
+		at org.springframework.boot.logging.logback.SpringBootJoranConfigurator.processModel(SpringBootJoranConfigurator.java:136)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.doConfigure(GenericXMLConfigurator.java:178)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.doConfigure(GenericXMLConfigurator.java:123)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.doConfigure(GenericXMLConfigurator.java:66)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.configureByResourceUrl(LogbackLoggingSystem.java:300)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.lambda$loadConfiguration$2(LogbackLoggingSystem.java:262)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.withLoggingSuppressed(LogbackLoggingSystem.java:483)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:255)
+		... 29 common frames omitted
+2025-03-16 16:53:26.715 ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.model.processor.ImplicitModelHandler - Could not create component [layout] of type [ch.qos.logback.contrib.json.classic.JsonLayout] java.lang.ClassNotFoundException: ch.qos.logback.contrib.json.classic.JsonLayout
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:347)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:298)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:246)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:223)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:185)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:178)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:156)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:138)
+	at org.springframework.boot.context.event.EventPublishingRunListener.multicastInitialEvent(EventPublishingRunListener.java:136)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:81)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:64)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:118)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:112)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:63)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:353)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:313)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.application.arcagambling.ArcaGamblingApplication.main(ArcaGamblingApplication.java:12)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.model.processor.ImplicitModelHandler - Could not create component [layout] of type [ch.qos.logback.contrib.json.classic.JsonLayout] java.lang.ClassNotFoundException: ch.qos.logback.contrib.json.classic.JsonLayout
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.reportConfigurationErrorsIfNecessary(LogbackLoggingSystem.java:291)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:269)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.reinitialize(LogbackLoggingSystem.java:344)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:74)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:61)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:197)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:332)
+	... 24 common frames omitted
+	Suppressed: java.lang.ClassNotFoundException: ch.qos.logback.contrib.json.classic.JsonLayout
+		at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+		at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+		at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+		at ch.qos.logback.core.util.Loader.loadClass(Loader.java:132)
+		at ch.qos.logback.core.model.processor.ImplicitModelHandler.doComplex(ImplicitModelHandler.java:134)
+		at ch.qos.logback.core.model.processor.ImplicitModelHandler.handle(ImplicitModelHandler.java:94)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.secondPhaseTraverse(DefaultProcessor.java:241)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.secondPhaseTraverse(DefaultProcessor.java:253)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.secondPhaseTraverse(DefaultProcessor.java:253)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.secondPhaseTraverse(DefaultProcessor.java:253)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.traversalLoop(DefaultProcessor.java:90)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.process(DefaultProcessor.java:106)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.processModel(GenericXMLConfigurator.java:222)
+		at org.springframework.boot.logging.logback.SpringBootJoranConfigurator.processModel(SpringBootJoranConfigurator.java:136)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.doConfigure(GenericXMLConfigurator.java:178)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.doConfigure(GenericXMLConfigurator.java:123)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.doConfigure(GenericXMLConfigurator.java:66)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.configureByResourceUrl(LogbackLoggingSystem.java:300)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.lambda$loadConfiguration$2(LogbackLoggingSystem.java:262)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.withLoggingSuppressed(LogbackLoggingSystem.java:483)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:255)
+		... 29 common frames omitted
+2025-03-16 16:53:50.409 ERROR o.s.boot.SpringApplication - Application run failed
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.model.processor.ImplicitModelHandler - Could not create component [layout] of type [ch.qos.logback.contrib.json.classic.JsonLayout] java.lang.ClassNotFoundException: ch.qos.logback.contrib.json.classic.JsonLayout
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:347)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:298)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:246)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:223)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:185)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:178)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:156)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:138)
+	at org.springframework.boot.context.event.EventPublishingRunListener.multicastInitialEvent(EventPublishingRunListener.java:136)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:81)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:64)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:118)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:112)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:63)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:353)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:313)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1361)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1350)
+	at com.application.arcagambling.ArcaGamblingApplication.main(ArcaGamblingApplication.java:12)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:50)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.model.processor.ImplicitModelHandler - Could not create component [layout] of type [ch.qos.logback.contrib.json.classic.JsonLayout] java.lang.ClassNotFoundException: ch.qos.logback.contrib.json.classic.JsonLayout
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.reportConfigurationErrorsIfNecessary(LogbackLoggingSystem.java:291)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:269)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.reinitialize(LogbackLoggingSystem.java:344)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithConventions(AbstractLoggingSystem.java:74)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:61)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:197)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:332)
+	... 24 common frames omitted
+	Suppressed: java.lang.ClassNotFoundException: ch.qos.logback.contrib.json.classic.JsonLayout
+		at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:641)
+		at java.base/jdk.internal.loader.ClassLoaders$AppClassLoader.loadClass(ClassLoaders.java:188)
+		at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:520)
+		at ch.qos.logback.core.util.Loader.loadClass(Loader.java:132)
+		at ch.qos.logback.core.model.processor.ImplicitModelHandler.doComplex(ImplicitModelHandler.java:134)
+		at ch.qos.logback.core.model.processor.ImplicitModelHandler.handle(ImplicitModelHandler.java:94)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.secondPhaseTraverse(DefaultProcessor.java:241)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.secondPhaseTraverse(DefaultProcessor.java:253)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.secondPhaseTraverse(DefaultProcessor.java:253)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.secondPhaseTraverse(DefaultProcessor.java:253)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.traversalLoop(DefaultProcessor.java:90)
+		at ch.qos.logback.core.model.processor.DefaultProcessor.process(DefaultProcessor.java:106)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.processModel(GenericXMLConfigurator.java:222)
+		at org.springframework.boot.logging.logback.SpringBootJoranConfigurator.processModel(SpringBootJoranConfigurator.java:136)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.doConfigure(GenericXMLConfigurator.java:178)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.doConfigure(GenericXMLConfigurator.java:123)
+		at ch.qos.logback.core.joran.GenericXMLConfigurator.doConfigure(GenericXMLConfigurator.java:66)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.configureByResourceUrl(LogbackLoggingSystem.java:300)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.lambda$loadConfiguration$2(LogbackLoggingSystem.java:262)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.withLoggingSuppressed(LogbackLoggingSystem.java:483)
+		at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:255)
+		... 29 common frames omitted
+2025-03-16 16:54:41.517 INFO  c.a.a.ArcaGamblingApplication - Starting ArcaGamblingApplication using Java 17.0.9 with PID 36128 (C:\Users\oring\git\arcaGambling\build\classes\java\main started by user in C:\Users\oring\git\arcaGambling)
+2025-03-16 16:54:41.519 INFO  c.a.a.ArcaGamblingApplication - No active profile set, falling back to 1 default profile: "default"
+2025-03-16 16:54:41.659 INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2025-03-16 16:54:41.659 INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2025-03-16 16:54:42.053 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-03-16 16:54:42.089 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 30 ms. Found 2 JPA repository interfaces.
+2025-03-16 16:54:42.406 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 80 (http)
+2025-03-16 16:54:42.409 INFO  o.a.c.core.AprLifecycleListener - An older version [1.3.1] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [2.0.5]
+2025-03-16 16:54:42.409 INFO  o.a.c.core.AprLifecycleListener - Loaded Apache Tomcat Native library [1.3.1] using APR version [1.7.4].
+2025-03-16 16:54:42.411 INFO  o.a.c.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 3.0.14 4 Jun 2024]
+2025-03-16 16:54:42.416 INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-80"]
+2025-03-16 16:54:42.417 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-03-16 16:54:42.418 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.36]
+2025-03-16 16:54:42.449 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-03-16 16:54:42.449 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 790 ms
+2025-03-16 16:54:42.549 INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-03-16 16:54:42.580 INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.8.Final
+2025-03-16 16:54:42.605 INFO  o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-03-16 16:54:42.783 INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-03-16 16:54:42.802 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-03-16 16:54:42.973 INFO  jdbc.connection - 1. Connection opened
+2025-03-16 16:54:42.973 INFO  jdbc.audit - 1. Connection.new Connection returned 
+2025-03-16 16:54:42.973 INFO  jdbc.audit - 1. Connection.getNetworkTimeout() returned 0
+2025-03-16 16:54:42.974 INFO  jdbc.audit - 1. Connection.isReadOnly() returned false
+2025-03-16 16:54:42.974 INFO  jdbc.audit - 1. Connection.getAutoCommit() returned true
+2025-03-16 16:54:42.975 INFO  jdbc.audit - 1. Connection.isValid(1) returned true
+2025-03-16 16:54:42.975 INFO  jdbc.audit - 1. Connection.getTransactionIsolation() returned 4
+2025-03-16 16:54:42.975 INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection net.sf.log4jdbc.sql.jdbcapi.ConnectionSpy@6b8a7a35
+2025-03-16 16:54:42.977 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-03-16 16:54:42.979 INFO  jdbc.audit - 1. Connection.getMetaData() returned com.mysql.cj.jdbc.DatabaseMetaDataUsingInfoSchema@7a40d99a
+2025-03-16 16:54:43.010 INFO  jdbc.audit - 1. Statement.new Statement returned 
+2025-03-16 16:54:43.010 INFO  jdbc.audit - 1. Connection.createStatement() returned net.sf.log4jdbc.sql.jdbcapi.StatementSpy@2f20e929
+2025-03-16 16:54:43.011 INFO  jdbc.sqlonly - SELECT @@character_set_database, @@sql_mode
+
+2025-03-16 16:54:43.013 INFO  jdbc.sqltiming - SELECT @@character_set_database, @@sql_mode
+ {executed in 1 msec}
+2025-03-16 16:54:43.015 INFO  jdbc.resultset - 1. ResultSet.new ResultSet returned 
+2025-03-16 16:54:43.015 INFO  jdbc.audit - 1. Statement.executeQuery(SELECT @@character_set_database, @@sql_mode) returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@479a03f2
+2025-03-16 16:54:43.017 INFO  jdbc.resultset - 1. ResultSet.next() returned true
+2025-03-16 16:54:43.017 INFO  jdbc.resultset - 1. ResultSet.getString(1) returned utf8mb4
+2025-03-16 16:54:43.017 INFO  jdbc.resultset - 1. ResultSet.getString(2) returned ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION
+2025-03-16 16:54:43.017 INFO  jdbc.audit - 1. Statement.close() returned 
+2025-03-16 16:54:43.025 INFO  jdbc.audit - 1. Connection.getCatalog() returned ARCA
+2025-03-16 16:54:43.026 INFO  jdbc.audit - 1. Connection.getSchema() returned null
+2025-03-16 16:54:43.026 INFO  jdbc.audit - 1. Connection.getSchema() returned null
+2025-03-16 16:54:43.028 INFO  jdbc.audit - 1. Connection.getMetaData() returned com.mysql.cj.jdbc.DatabaseMetaDataUsingInfoSchema@c7c6541
+2025-03-16 16:54:43.029 INFO  jdbc.audit - 1. Connection.createClob() returned com.mysql.cj.jdbc.Clob@22dc35f1
+2025-03-16 16:54:43.029 INFO  jdbc.audit - 1. Connection.createNClob() returned com.mysql.cj.jdbc.NClob@5b0ce7c5
+2025-03-16 16:54:43.031 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:54:43.034 INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0.40
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-03-16 16:54:43.088 INFO  jdbc.connection - 2. Connection opened
+2025-03-16 16:54:43.088 INFO  jdbc.audit - 2. Connection.new Connection returned 
+2025-03-16 16:54:43.088 INFO  jdbc.audit - 2. Connection.isReadOnly() returned false
+2025-03-16 16:54:43.088 INFO  jdbc.audit - 2. Connection.getAutoCommit() returned true
+2025-03-16 16:54:43.130 INFO  jdbc.connection - 3. Connection opened
+2025-03-16 16:54:43.130 INFO  jdbc.audit - 3. Connection.new Connection returned 
+2025-03-16 16:54:43.130 INFO  jdbc.audit - 3. Connection.isReadOnly() returned false
+2025-03-16 16:54:43.130 INFO  jdbc.audit - 3. Connection.getAutoCommit() returned true
+2025-03-16 16:54:43.177 INFO  jdbc.connection - 4. Connection opened
+2025-03-16 16:54:43.177 INFO  jdbc.audit - 4. Connection.new Connection returned 
+2025-03-16 16:54:43.177 INFO  jdbc.audit - 4. Connection.isReadOnly() returned false
+2025-03-16 16:54:43.177 INFO  jdbc.audit - 4. Connection.getAutoCommit() returned true
+2025-03-16 16:54:43.224 INFO  jdbc.connection - 5. Connection opened
+2025-03-16 16:54:43.225 INFO  jdbc.audit - 5. Connection.new Connection returned 
+2025-03-16 16:54:43.225 INFO  jdbc.audit - 5. Connection.isReadOnly() returned false
+2025-03-16 16:54:43.225 INFO  jdbc.audit - 5. Connection.getAutoCommit() returned true
+2025-03-16 16:54:43.269 INFO  jdbc.connection - 6. Connection opened
+2025-03-16 16:54:43.269 INFO  jdbc.audit - 6. Connection.new Connection returned 
+2025-03-16 16:54:43.270 INFO  jdbc.audit - 6. Connection.isReadOnly() returned false
+2025-03-16 16:54:43.270 INFO  jdbc.audit - 6. Connection.getAutoCommit() returned true
+2025-03-16 16:54:43.317 INFO  jdbc.connection - 7. Connection opened
+2025-03-16 16:54:43.317 INFO  jdbc.audit - 7. Connection.new Connection returned 
+2025-03-16 16:54:43.317 INFO  jdbc.audit - 7. Connection.isReadOnly() returned false
+2025-03-16 16:54:43.317 INFO  jdbc.audit - 7. Connection.getAutoCommit() returned true
+2025-03-16 16:54:43.362 INFO  jdbc.connection - 8. Connection opened
+2025-03-16 16:54:43.362 INFO  jdbc.audit - 8. Connection.new Connection returned 
+2025-03-16 16:54:43.362 INFO  jdbc.audit - 8. Connection.isReadOnly() returned false
+2025-03-16 16:54:43.362 INFO  jdbc.audit - 8. Connection.getAutoCommit() returned true
+2025-03-16 16:54:43.409 INFO  jdbc.connection - 9. Connection opened
+2025-03-16 16:54:43.409 INFO  jdbc.audit - 9. Connection.new Connection returned 
+2025-03-16 16:54:43.409 INFO  jdbc.audit - 9. Connection.isReadOnly() returned false
+2025-03-16 16:54:43.409 INFO  jdbc.audit - 9. Connection.getAutoCommit() returned true
+2025-03-16 16:54:43.455 INFO  jdbc.connection - 10. Connection opened
+2025-03-16 16:54:43.455 INFO  jdbc.audit - 10. Connection.new Connection returned 
+2025-03-16 16:54:43.456 INFO  jdbc.audit - 10. Connection.isReadOnly() returned false
+2025-03-16 16:54:43.456 INFO  jdbc.audit - 10. Connection.getAutoCommit() returned true
+2025-03-16 16:54:43.552 INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-03-16 16:54:43.562 INFO  jdbc.audit - 1. Connection.isValid(5) returned true
+2025-03-16 16:54:43.563 INFO  jdbc.audit - 1. Connection.getAutoCommit() returned true
+2025-03-16 16:54:43.563 INFO  jdbc.audit - 1. Statement.new Statement returned 
+2025-03-16 16:54:43.563 INFO  jdbc.audit - 1. Connection.createStatement() returned net.sf.log4jdbc.sql.jdbcapi.StatementSpy@12c466fe
+2025-03-16 16:54:43.563 INFO  jdbc.sqlonly - drop table if exists thermo
+
+2025-03-16 16:54:43.569 INFO  jdbc.sqltiming - drop table if exists thermo
+ {executed in 6 msec}
+2025-03-16 16:54:43.570 INFO  jdbc.audit - 1. Statement.execute(
+    drop table if exists thermo) returned false
+2025-03-16 16:54:43.570 INFO  jdbc.audit - 1. Statement.getWarnings() returned null
+2025-03-16 16:54:43.570 INFO  jdbc.sqlonly - drop table if exists tree
+
+2025-03-16 16:54:43.576 INFO  jdbc.sqltiming - drop table if exists tree
+ {executed in 6 msec}
+2025-03-16 16:54:43.576 INFO  jdbc.audit - 1. Statement.execute(
+    drop table if exists tree) returned false
+2025-03-16 16:54:43.576 INFO  jdbc.audit - 1. Statement.getWarnings() returned null
+2025-03-16 16:54:43.576 INFO  jdbc.audit - 1. Statement.close() returned 
+2025-03-16 16:54:43.576 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:54:43.579 INFO  jdbc.audit - 1. Connection.getAutoCommit() returned true
+2025-03-16 16:54:43.579 INFO  jdbc.audit - 1. Statement.new Statement returned 
+2025-03-16 16:54:43.579 INFO  jdbc.audit - 1. Connection.createStatement() returned net.sf.log4jdbc.sql.jdbcapi.StatementSpy@6f5889ba
+2025-03-16 16:54:43.579 INFO  jdbc.sqlonly - create table thermo (
+        degree integer,
+        rounds bigint not null,
+        ooe varchar(255),
+        primary key (rounds)
+    ) engine=InnoDB
+
+2025-03-16 16:54:43.588 INFO  jdbc.sqltiming - create table thermo (
+        degree integer,
+        rounds bigint not null,
+        ooe varchar(255),
+        primary key (rounds)
+    ) engine=InnoDB
+ {executed in 9 msec}
+2025-03-16 16:54:43.589 INFO  jdbc.audit - 1. Statement.execute(
+    create table thermo (
+        degree integer,
+        rounds bigint not null,
+        ooe varchar(255),
+        primary key (rounds)
+    ) engine=InnoDB) returned false
+2025-03-16 16:54:43.589 INFO  jdbc.audit - 1. Statement.getWarnings() returned null
+2025-03-16 16:54:43.589 INFO  jdbc.sqlonly - create table tree (
+        number integer,
+        rounds bigint not null,
+        army varchar(255),
+        lor varchar(255),
+        ooe varchar(255),
+        primary key (rounds)
+    ) engine=InnoDB
+
+2025-03-16 16:54:43.598 INFO  jdbc.sqltiming - create table tree (
+        number integer,
+        rounds bigint not null,
+        army varchar(255),
+        lor varchar(255),
+        ooe varchar(255),
+        primary key (rounds)
+    ) engine=InnoDB
+ {executed in 8 msec}
+2025-03-16 16:54:43.598 INFO  jdbc.audit - 1. Statement.execute(
+    create table tree (
+        number integer,
+        rounds bigint not null,
+        army varchar(255),
+        lor varchar(255),
+        ooe varchar(255),
+        primary key (rounds)
+    ) engine=InnoDB) returned false
+2025-03-16 16:54:43.598 INFO  jdbc.audit - 1. Statement.getWarnings() returned null
+2025-03-16 16:54:43.599 INFO  jdbc.audit - 1. Statement.close() returned 
+2025-03-16 16:54:43.599 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:54:43.600 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-03-16 16:54:44.039 INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2025-03-16 16:54:44.051 INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-80"]
+2025-03-16 16:54:44.066 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 80 (http) with context path '/'
+2025-03-16 16:54:44.074 INFO  c.a.a.ArcaGamblingApplication - Started ArcaGamblingApplication in 2.776 seconds (process running for 3.285)
+2025-03-16 16:55:00.203 INFO  jdbc.audit - 1. Connection.isValid(5) returned true
+2025-03-16 16:55:00.203 INFO  jdbc.audit - 1. Connection.getAutoCommit() returned true
+2025-03-16 16:55:00.204 INFO  jdbc.audit - 1. Connection.setAutoCommit(false) returned 
+2025-03-16 16:55:00.226 INFO  jdbc.audit - 1. PreparedStatement.new PreparedStatement returned 
+2025-03-16 16:55:00.226 INFO  jdbc.audit - 1. Connection.prepareStatement(select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 where t1_0.rounds=?, 1003, 1007) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@18bf3fb5
+2025-03-16 16:55:00.228 INFO  jdbc.audit - 1. PreparedStatement.setLong(1, 3023515) returned 
+2025-03-16 16:55:00.228 INFO  jdbc.sqlonly - select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 where t1_0.rounds=3023515
+
+2025-03-16 16:55:00.230 INFO  jdbc.sqltiming - select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 where t1_0.rounds=3023515
+ {executed in 2 msec}
+2025-03-16 16:55:00.230 INFO  jdbc.resultset - 1. ResultSet.new ResultSet returned 
+2025-03-16 16:55:00.230 INFO  jdbc.audit - 1. PreparedStatement.executeQuery() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@3a7a2f51
+2025-03-16 16:55:00.241 INFO  jdbc.resultsettable - 
+|-------|-------|----|
+|rounds |degree |ooe |
+|-------|-------|----|
+|-------|-------|----|
+
+2025-03-16 16:55:00.241 INFO  jdbc.resultset - 1. ResultSet.next() returned false
+2025-03-16 16:55:00.241 INFO  jdbc.audit - 1. PreparedStatement.isClosed() returned false
+2025-03-16 16:55:00.241 INFO  jdbc.resultset - 1. ResultSet.close() returned void
+2025-03-16 16:55:00.241 INFO  jdbc.audit - 1. PreparedStatement.getMaxRows() returned 0
+2025-03-16 16:55:00.241 INFO  jdbc.audit - 1. PreparedStatement.getQueryTimeout() returned 0
+2025-03-16 16:55:00.241 INFO  jdbc.audit - 1. PreparedStatement.close() returned 
+2025-03-16 16:55:00.257 INFO  jdbc.audit - 1. PreparedStatement.new PreparedStatement returned 
+2025-03-16 16:55:00.258 INFO  jdbc.audit - 1. Connection.prepareStatement(insert into thermo (degree,ooe,rounds) values (?,?,?)) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@78abd645
+2025-03-16 16:55:00.258 INFO  jdbc.audit - 1. PreparedStatement.setInt(1, 69) returned 
+2025-03-16 16:55:00.258 INFO  jdbc.audit - 1. PreparedStatement.setString(2, "홀") returned 
+2025-03-16 16:55:00.258 INFO  jdbc.audit - 1. PreparedStatement.setLong(3, 3023515) returned 
+2025-03-16 16:55:00.258 INFO  jdbc.sqlonly - insert into thermo (degree,ooe,rounds) values (69,'홀',3023515)
+
+2025-03-16 16:55:00.259 INFO  jdbc.sqltiming - insert into thermo (degree,ooe,rounds) values (69,'홀',3023515)
+ {executed in 1 msec}
+2025-03-16 16:55:00.259 INFO  jdbc.audit - 1. PreparedStatement.executeUpdate() returned 1
+2025-03-16 16:55:00.259 INFO  jdbc.audit - 1. PreparedStatement.getMaxRows() returned 0
+2025-03-16 16:55:00.259 INFO  jdbc.audit - 1. PreparedStatement.getQueryTimeout() returned 0
+2025-03-16 16:55:00.259 INFO  jdbc.audit - 1. PreparedStatement.close() returned 
+2025-03-16 16:55:00.261 INFO  jdbc.audit - 1. Connection.commit() returned 
+2025-03-16 16:55:00.262 INFO  jdbc.audit - 1. Connection.setAutoCommit(true) returned 
+2025-03-16 16:55:00.263 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:55:00.263 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:55:00.264 INFO  jdbc.audit - 1. Connection.setReadOnly(true) returned 
+2025-03-16 16:55:00.264 INFO  jdbc.audit - 1. Connection.getAutoCommit() returned true
+2025-03-16 16:55:00.264 INFO  jdbc.audit - 1. Connection.setAutoCommit(false) returned 
+2025-03-16 16:55:00.327 INFO  jdbc.audit - 1. PreparedStatement.new PreparedStatement returned 
+2025-03-16 16:55:00.327 INFO  jdbc.audit - 1. Connection.prepareStatement(select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 order by t1_0.rounds desc limit ?,?, 1003, 1007) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@4bae6f94
+2025-03-16 16:55:00.327 INFO  jdbc.audit - 1. PreparedStatement.setInt(1, 0) returned 
+2025-03-16 16:55:00.327 INFO  jdbc.audit - 1. PreparedStatement.setInt(2, 20) returned 
+2025-03-16 16:55:00.327 INFO  jdbc.sqlonly - select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 order by t1_0.rounds desc limit 0,20
+
+2025-03-16 16:55:00.327 INFO  jdbc.sqltiming - select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 order by t1_0.rounds desc limit 0,20
+ {executed in 0 msec}
+2025-03-16 16:55:00.327 INFO  jdbc.resultset - 1. ResultSet.new ResultSet returned 
+2025-03-16 16:55:00.327 INFO  jdbc.audit - 1. PreparedStatement.executeQuery() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@25abe7e4
+2025-03-16 16:55:00.328 INFO  jdbc.resultset - 1. ResultSet.next() returned true
+2025-03-16 16:55:00.328 INFO  jdbc.resultset - 1. ResultSet.getLong(1) returned 3023515
+2025-03-16 16:55:00.328 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:00.328 INFO  jdbc.resultset - 1. ResultSet.getInt(2) returned 69
+2025-03-16 16:55:00.328 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:00.328 INFO  jdbc.resultset - 1. ResultSet.getString(3) returned 홀
+2025-03-16 16:55:00.328 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:00.328 INFO  jdbc.resultsettable - 
+|--------|-------|----|
+|rounds  |degree |ooe |
+|--------|-------|----|
+|3023515 |69     |홀   |
+|--------|-------|----|
+
+2025-03-16 16:55:00.328 INFO  jdbc.resultset - 1. ResultSet.next() returned false
+2025-03-16 16:55:00.328 INFO  jdbc.audit - 1. PreparedStatement.isClosed() returned false
+2025-03-16 16:55:00.329 INFO  jdbc.resultset - 1. ResultSet.close() returned void
+2025-03-16 16:55:00.329 INFO  jdbc.audit - 1. PreparedStatement.getMaxRows() returned 0
+2025-03-16 16:55:00.329 INFO  jdbc.audit - 1. PreparedStatement.getQueryTimeout() returned 0
+2025-03-16 16:55:00.329 INFO  jdbc.audit - 1. PreparedStatement.close() returned 
+2025-03-16 16:55:00.330 INFO  jdbc.audit - 1. Connection.commit() returned 
+2025-03-16 16:55:00.330 INFO  jdbc.audit - 1. Connection.setAutoCommit(true) returned 
+2025-03-16 16:55:00.331 INFO  jdbc.audit - 1. Connection.setReadOnly(false) returned 
+2025-03-16 16:55:00.331 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:55:00.331 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:55:09.313 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-03-16 16:55:09.313 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-03-16 16:55:09.314 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-03-16 16:55:11.280 INFO  jdbc.audit - 1. Connection.isValid(5) returned true
+2025-03-16 16:55:11.280 INFO  jdbc.audit - 1. Connection.setReadOnly(true) returned 
+2025-03-16 16:55:11.281 INFO  jdbc.audit - 1. Connection.getAutoCommit() returned true
+2025-03-16 16:55:11.281 INFO  jdbc.audit - 1. Connection.setAutoCommit(false) returned 
+2025-03-16 16:55:11.282 INFO  jdbc.audit - 1. PreparedStatement.new PreparedStatement returned 
+2025-03-16 16:55:11.282 INFO  jdbc.audit - 1. Connection.prepareStatement(select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit ?,?, 1003, 1007) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@5a106201
+2025-03-16 16:55:11.282 INFO  jdbc.audit - 1. PreparedStatement.setInt(1, 0) returned 
+2025-03-16 16:55:11.282 INFO  jdbc.audit - 1. PreparedStatement.setInt(2, 1) returned 
+2025-03-16 16:55:11.282 INFO  jdbc.sqlonly - select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit 0,1
+
+2025-03-16 16:55:11.283 INFO  jdbc.sqltiming - select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit 0,1
+ {executed in 1 msec}
+2025-03-16 16:55:11.283 INFO  jdbc.resultset - 1. ResultSet.new ResultSet returned 
+2025-03-16 16:55:11.283 INFO  jdbc.audit - 1. PreparedStatement.executeQuery() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@6e922b70
+2025-03-16 16:55:11.283 INFO  jdbc.resultsettable - 
+|-------|-----|----|-------|----|
+|rounds |army |lor |number |ooe |
+|-------|-----|----|-------|----|
+|-------|-----|----|-------|----|
+
+2025-03-16 16:55:11.283 INFO  jdbc.resultset - 1. ResultSet.next() returned false
+2025-03-16 16:55:11.283 INFO  jdbc.audit - 1. PreparedStatement.isClosed() returned false
+2025-03-16 16:55:11.284 INFO  jdbc.resultset - 1. ResultSet.close() returned void
+2025-03-16 16:55:11.284 INFO  jdbc.audit - 1. PreparedStatement.getMaxRows() returned 0
+2025-03-16 16:55:11.284 INFO  jdbc.audit - 1. PreparedStatement.getQueryTimeout() returned 0
+2025-03-16 16:55:11.284 INFO  jdbc.audit - 1. PreparedStatement.close() returned 
+2025-03-16 16:55:11.284 INFO  jdbc.audit - 1. Connection.commit() returned 
+2025-03-16 16:55:11.284 INFO  jdbc.audit - 1. Connection.setAutoCommit(true) returned 
+2025-03-16 16:55:11.284 INFO  jdbc.audit - 1. Connection.setReadOnly(false) returned 
+2025-03-16 16:55:11.284 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:55:11.284 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:55:11.332 ERROR org.thymeleaf.TemplateEngine - [THYMELEAF][http-nio-80-exec-6] Exception processing template "tree/predict": An error happened during template parsing (template: "class path resource [templates/tree/predict.html]")
+org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/tree/predict.html]")
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:241)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1103)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1077)
+	at org.thymeleaf.spring6.view.ThymeleafView.renderFragment(ThymeleafView.java:372)
+	at org.thymeleaf.spring6.view.ThymeleafView.render(ThymeleafView.java:192)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1435)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1167)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1105)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: org.attoparser.ParseException: Exception evaluating SpringEL expression: "recent.rounds" (template: "tree/predict" - line 33, col 12)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:393)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	... 48 common frames omitted
+Caused by: org.thymeleaf.exceptions.TemplateProcessingException: Exception evaluating SpringEL expression: "recent.rounds" (template: "tree/predict" - line 33, col 12)
+	at org.thymeleaf.spring6.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:292)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.AdditionExpression.executeAddition(AdditionExpression.java:96)
+	at org.thymeleaf.standard.expression.ComplexExpression.executeComplex(ComplexExpression.java:62)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:112)
+	at org.thymeleaf.standard.expression.AdditionExpression.executeAddition(AdditionExpression.java:89)
+	at org.thymeleaf.standard.expression.ComplexExpression.executeComplex(ComplexExpression.java:62)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:112)
+	at org.thymeleaf.standard.expression.AdditionExpression.executeAddition(AdditionExpression.java:89)
+	at org.thymeleaf.standard.expression.ComplexExpression.executeComplex(ComplexExpression.java:62)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:112)
+	at org.thymeleaf.standard.expression.AdditionExpression.executeAddition(AdditionExpression.java:89)
+	at org.thymeleaf.standard.expression.ComplexExpression.executeComplex(ComplexExpression.java:62)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:112)
+	at org.thymeleaf.standard.expression.AdditionExpression.executeAddition(AdditionExpression.java:89)
+	at org.thymeleaf.standard.expression.ComplexExpression.executeComplex(ComplexExpression.java:62)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:112)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1587)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1587)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.Model.process(Model.java:290)
+	at org.thymeleaf.engine.GatheringModelProcessable.process(GatheringModelProcessable.java:78)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleCloseElement(ProcessorTemplateHandler.java:1640)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleCloseElementEnd(TemplateHandlerAdapterMarkupHandler.java:388)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleCloseElementEnd(InlinedOutputExpressionMarkupHandler.java:322)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleCloseElementEnd(OutputExpressionInlinePreProcessorHandler.java:220)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleCloseElementEnd(InlinedOutputExpressionMarkupHandler.java:164)
+	at org.attoparser.HtmlElement.handleCloseElementEnd(HtmlElement.java:169)
+	at org.attoparser.HtmlMarkupHandler.handleCloseElementEnd(HtmlMarkupHandler.java:412)
+	at org.attoparser.MarkupEventProcessorHandler.handleCloseElementEnd(MarkupEventProcessorHandler.java:473)
+	at org.attoparser.ParsingElementMarkupUtil.parseCloseElement(ParsingElementMarkupUtil.java:201)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:725)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	... 50 common frames omitted
+Caused by: org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property or field 'rounds' cannot be found on null
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:225)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:112)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorValueRef.getValue(PropertyOrFieldReference.java:376)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:97)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:116)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:338)
+	at org.thymeleaf.spring6.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:265)
+	... 95 common frames omitted
+2025-03-16 16:55:11.334 ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.thymeleaf.exceptions.TemplateInputException: An error happened during template parsing (template: "class path resource [templates/tree/predict.html]")] with root cause
+org.springframework.expression.spel.SpelEvaluationException: EL1007E: Property or field 'rounds' cannot be found on null
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.readProperty(PropertyOrFieldReference.java:225)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference.getValueInternal(PropertyOrFieldReference.java:112)
+	at org.springframework.expression.spel.ast.PropertyOrFieldReference$AccessorValueRef.getValue(PropertyOrFieldReference.java:376)
+	at org.springframework.expression.spel.ast.CompoundExpression.getValueInternal(CompoundExpression.java:97)
+	at org.springframework.expression.spel.ast.SpelNodeImpl.getValue(SpelNodeImpl.java:116)
+	at org.springframework.expression.spel.standard.SpelExpression.getValue(SpelExpression.java:338)
+	at org.thymeleaf.spring6.expression.SPELVariableExpressionEvaluator.evaluate(SPELVariableExpressionEvaluator.java:265)
+	at org.thymeleaf.standard.expression.VariableExpression.executeVariableExpression(VariableExpression.java:166)
+	at org.thymeleaf.standard.expression.SimpleExpression.executeSimple(SimpleExpression.java:66)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:109)
+	at org.thymeleaf.standard.expression.AdditionExpression.executeAddition(AdditionExpression.java:96)
+	at org.thymeleaf.standard.expression.ComplexExpression.executeComplex(ComplexExpression.java:62)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:112)
+	at org.thymeleaf.standard.expression.AdditionExpression.executeAddition(AdditionExpression.java:89)
+	at org.thymeleaf.standard.expression.ComplexExpression.executeComplex(ComplexExpression.java:62)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:112)
+	at org.thymeleaf.standard.expression.AdditionExpression.executeAddition(AdditionExpression.java:89)
+	at org.thymeleaf.standard.expression.ComplexExpression.executeComplex(ComplexExpression.java:62)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:112)
+	at org.thymeleaf.standard.expression.AdditionExpression.executeAddition(AdditionExpression.java:89)
+	at org.thymeleaf.standard.expression.ComplexExpression.executeComplex(ComplexExpression.java:62)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:112)
+	at org.thymeleaf.standard.expression.AdditionExpression.executeAddition(AdditionExpression.java:89)
+	at org.thymeleaf.standard.expression.ComplexExpression.executeComplex(ComplexExpression.java:62)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:112)
+	at org.thymeleaf.standard.expression.Expression.execute(Expression.java:138)
+	at org.thymeleaf.standard.processor.AbstractStandardExpressionAttributeTagProcessor.doProcess(AbstractStandardExpressionAttributeTagProcessor.java:144)
+	at org.thymeleaf.processor.element.AbstractAttributeTagProcessor.doProcess(AbstractAttributeTagProcessor.java:74)
+	at org.thymeleaf.processor.element.AbstractElementTagProcessor.process(AbstractElementTagProcessor.java:95)
+	at org.thymeleaf.util.ProcessorConfigurationUtils$ElementTagProcessorWrapper.process(ProcessorConfigurationUtils.java:633)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1314)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1587)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleOpenElement(ProcessorTemplateHandler.java:1587)
+	at org.thymeleaf.engine.OpenElementTag.beHandled(OpenElementTag.java:205)
+	at org.thymeleaf.engine.Model.process(Model.java:282)
+	at org.thymeleaf.engine.Model.process(Model.java:290)
+	at org.thymeleaf.engine.GatheringModelProcessable.process(GatheringModelProcessable.java:78)
+	at org.thymeleaf.engine.ProcessorTemplateHandler.handleCloseElement(ProcessorTemplateHandler.java:1640)
+	at org.thymeleaf.engine.TemplateHandlerAdapterMarkupHandler.handleCloseElementEnd(TemplateHandlerAdapterMarkupHandler.java:388)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler$InlineMarkupAdapterPreProcessorHandler.handleCloseElementEnd(InlinedOutputExpressionMarkupHandler.java:322)
+	at org.thymeleaf.standard.inline.OutputExpressionInlinePreProcessorHandler.handleCloseElementEnd(OutputExpressionInlinePreProcessorHandler.java:220)
+	at org.thymeleaf.templateparser.markup.InlinedOutputExpressionMarkupHandler.handleCloseElementEnd(InlinedOutputExpressionMarkupHandler.java:164)
+	at org.attoparser.HtmlElement.handleCloseElementEnd(HtmlElement.java:169)
+	at org.attoparser.HtmlMarkupHandler.handleCloseElementEnd(HtmlMarkupHandler.java:412)
+	at org.attoparser.MarkupEventProcessorHandler.handleCloseElementEnd(MarkupEventProcessorHandler.java:473)
+	at org.attoparser.ParsingElementMarkupUtil.parseCloseElement(ParsingElementMarkupUtil.java:201)
+	at org.attoparser.MarkupParser.parseBuffer(MarkupParser.java:725)
+	at org.attoparser.MarkupParser.parseDocument(MarkupParser.java:301)
+	at org.attoparser.MarkupParser.parse(MarkupParser.java:257)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parse(AbstractMarkupTemplateParser.java:230)
+	at org.thymeleaf.templateparser.markup.AbstractMarkupTemplateParser.parseStandalone(AbstractMarkupTemplateParser.java:100)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:666)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1103)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1077)
+	at org.thymeleaf.spring6.view.ThymeleafView.renderFragment(ThymeleafView.java:372)
+	at org.thymeleaf.spring6.view.ThymeleafView.render(ThymeleafView.java:192)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1435)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1167)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1105)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:978)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1743)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+2025-03-16 16:55:13.055 INFO  jdbc.audit - 1. Connection.isValid(5) returned true
+2025-03-16 16:55:13.055 INFO  jdbc.audit - 1. Connection.getAutoCommit() returned true
+2025-03-16 16:55:13.056 INFO  jdbc.audit - 1. Connection.setAutoCommit(false) returned 
+2025-03-16 16:55:13.057 INFO  jdbc.audit - 1. PreparedStatement.new PreparedStatement returned 
+2025-03-16 16:55:13.057 INFO  jdbc.audit - 1. Connection.prepareStatement(select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 where t1_0.rounds=?, 1003, 1007) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@4ef0302c
+2025-03-16 16:55:13.057 INFO  jdbc.audit - 1. PreparedStatement.setLong(1, 690532) returned 
+2025-03-16 16:55:13.057 INFO  jdbc.sqlonly - select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 where t1_0.rounds=690532
+
+2025-03-16 16:55:13.057 INFO  jdbc.sqltiming - select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 where t1_0.rounds=690532
+ {executed in 0 msec}
+2025-03-16 16:55:13.057 INFO  jdbc.resultset - 1. ResultSet.new ResultSet returned 
+2025-03-16 16:55:13.057 INFO  jdbc.audit - 1. PreparedStatement.executeQuery() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@613ae7a0
+2025-03-16 16:55:13.058 INFO  jdbc.resultsettable - 
+|-------|-----|----|-------|----|
+|rounds |army |lor |number |ooe |
+|-------|-----|----|-------|----|
+|-------|-----|----|-------|----|
+
+2025-03-16 16:55:13.058 INFO  jdbc.resultset - 1. ResultSet.next() returned false
+2025-03-16 16:55:13.058 INFO  jdbc.audit - 1. PreparedStatement.isClosed() returned false
+2025-03-16 16:55:13.058 INFO  jdbc.resultset - 1. ResultSet.close() returned void
+2025-03-16 16:55:13.058 INFO  jdbc.audit - 1. PreparedStatement.getMaxRows() returned 0
+2025-03-16 16:55:13.058 INFO  jdbc.audit - 1. PreparedStatement.getQueryTimeout() returned 0
+2025-03-16 16:55:13.058 INFO  jdbc.audit - 1. PreparedStatement.close() returned 
+2025-03-16 16:55:13.058 INFO  jdbc.audit - 1. PreparedStatement.new PreparedStatement returned 
+2025-03-16 16:55:13.058 INFO  jdbc.audit - 1. Connection.prepareStatement(insert into tree (army,lor,number,ooe,rounds) values (?,?,?,?,?)) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@1d16bc47
+2025-03-16 16:55:13.058 INFO  jdbc.audit - 1. PreparedStatement.setString(1, "4~6") returned 
+2025-03-16 16:55:13.058 INFO  jdbc.audit - 1. PreparedStatement.setString(2, "우") returned 
+2025-03-16 16:55:13.059 INFO  jdbc.audit - 1. PreparedStatement.setInt(3, 4) returned 
+2025-03-16 16:55:13.059 INFO  jdbc.audit - 1. PreparedStatement.setString(4, "짝") returned 
+2025-03-16 16:55:13.059 INFO  jdbc.audit - 1. PreparedStatement.setLong(5, 690532) returned 
+2025-03-16 16:55:13.059 INFO  jdbc.sqlonly - insert into tree (army,lor,number,ooe,rounds) values ('4~6','우',4,'짝',690532)
+
+2025-03-16 16:55:13.059 INFO  jdbc.sqltiming - insert into tree (army,lor,number,ooe,rounds) values ('4~6','우',4,'짝',690532)
+ {executed in 0 msec}
+2025-03-16 16:55:13.059 INFO  jdbc.audit - 1. PreparedStatement.executeUpdate() returned 1
+2025-03-16 16:55:13.059 INFO  jdbc.audit - 1. PreparedStatement.getMaxRows() returned 0
+2025-03-16 16:55:13.059 INFO  jdbc.audit - 1. PreparedStatement.getQueryTimeout() returned 0
+2025-03-16 16:55:13.059 INFO  jdbc.audit - 1. PreparedStatement.close() returned 
+2025-03-16 16:55:13.061 INFO  jdbc.audit - 1. Connection.commit() returned 
+2025-03-16 16:55:13.061 INFO  jdbc.audit - 1. Connection.setAutoCommit(true) returned 
+2025-03-16 16:55:13.061 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:55:13.061 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:55:13.061 INFO  jdbc.audit - 1. Connection.setReadOnly(true) returned 
+2025-03-16 16:55:13.062 INFO  jdbc.audit - 1. Connection.getAutoCommit() returned true
+2025-03-16 16:55:13.062 INFO  jdbc.audit - 1. Connection.setAutoCommit(false) returned 
+2025-03-16 16:55:13.063 INFO  jdbc.audit - 1. PreparedStatement.new PreparedStatement returned 
+2025-03-16 16:55:13.063 INFO  jdbc.audit - 1. Connection.prepareStatement(select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit ?,?, 1003, 1007) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@60e2e68a
+2025-03-16 16:55:13.063 INFO  jdbc.audit - 1. PreparedStatement.setInt(1, 0) returned 
+2025-03-16 16:55:13.063 INFO  jdbc.audit - 1. PreparedStatement.setInt(2, 20) returned 
+2025-03-16 16:55:13.063 INFO  jdbc.sqlonly - select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit 0,20
+
+2025-03-16 16:55:13.063 INFO  jdbc.sqltiming - select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit 0,20
+ {executed in 0 msec}
+2025-03-16 16:55:13.063 INFO  jdbc.resultset - 1. ResultSet.new ResultSet returned 
+2025-03-16 16:55:13.063 INFO  jdbc.audit - 1. PreparedStatement.executeQuery() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@7021ae4e
+2025-03-16 16:55:13.063 INFO  jdbc.resultset - 1. ResultSet.next() returned true
+2025-03-16 16:55:13.063 INFO  jdbc.resultset - 1. ResultSet.getLong(1) returned 690532
+2025-03-16 16:55:13.063 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:13.063 INFO  jdbc.resultset - 1. ResultSet.getString(2) returned 4~6
+2025-03-16 16:55:13.063 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:13.063 INFO  jdbc.resultset - 1. ResultSet.getString(3) returned 우
+2025-03-16 16:55:13.063 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:13.063 INFO  jdbc.resultset - 1. ResultSet.getInt(4) returned 4
+2025-03-16 16:55:13.063 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:13.063 INFO  jdbc.resultset - 1. ResultSet.getString(5) returned 짝
+2025-03-16 16:55:13.063 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:13.064 INFO  jdbc.resultsettable - 
+|-------|-----|----|-------|----|
+|rounds |army |lor |number |ooe |
+|-------|-----|----|-------|----|
+|690532 |4~6  |우   |4      |짝   |
+|-------|-----|----|-------|----|
+
+2025-03-16 16:55:13.064 INFO  jdbc.resultset - 1. ResultSet.next() returned false
+2025-03-16 16:55:13.064 INFO  jdbc.audit - 1. PreparedStatement.isClosed() returned false
+2025-03-16 16:55:13.064 INFO  jdbc.resultset - 1. ResultSet.close() returned void
+2025-03-16 16:55:13.064 INFO  jdbc.audit - 1. PreparedStatement.getMaxRows() returned 0
+2025-03-16 16:55:13.064 INFO  jdbc.audit - 1. PreparedStatement.getQueryTimeout() returned 0
+2025-03-16 16:55:13.064 INFO  jdbc.audit - 1. PreparedStatement.close() returned 
+2025-03-16 16:55:13.064 INFO  jdbc.audit - 1. Connection.commit() returned 
+2025-03-16 16:55:13.064 INFO  jdbc.audit - 1. Connection.setAutoCommit(true) returned 
+2025-03-16 16:55:13.065 INFO  jdbc.audit - 1. Connection.setReadOnly(false) returned 
+2025-03-16 16:55:13.065 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:55:13.065 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:55:13.065 INFO  jdbc.audit - 1. Connection.setReadOnly(true) returned 
+2025-03-16 16:55:13.065 INFO  jdbc.audit - 1. Connection.getAutoCommit() returned true
+2025-03-16 16:55:13.066 INFO  jdbc.audit - 1. Connection.setAutoCommit(false) returned 
+2025-03-16 16:55:13.066 INFO  jdbc.audit - 1. PreparedStatement.new PreparedStatement returned 
+2025-03-16 16:55:13.066 INFO  jdbc.audit - 1. Connection.prepareStatement(select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit ?,?, 1003, 1007) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@1ce2c9c7
+2025-03-16 16:55:13.066 INFO  jdbc.audit - 1. PreparedStatement.setInt(1, 0) returned 
+2025-03-16 16:55:13.066 INFO  jdbc.audit - 1. PreparedStatement.setInt(2, 20) returned 
+2025-03-16 16:55:13.066 INFO  jdbc.sqlonly - select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit 0,20
+
+2025-03-16 16:55:13.067 INFO  jdbc.sqltiming - select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit 0,20
+ {executed in 1 msec}
+2025-03-16 16:55:13.067 INFO  jdbc.resultset - 1. ResultSet.new ResultSet returned 
+2025-03-16 16:55:13.067 INFO  jdbc.audit - 1. PreparedStatement.executeQuery() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@41976026
+2025-03-16 16:55:13.067 INFO  jdbc.resultset - 1. ResultSet.next() returned true
+2025-03-16 16:55:13.067 INFO  jdbc.resultset - 1. ResultSet.getLong(1) returned 690532
+2025-03-16 16:55:13.067 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:13.067 INFO  jdbc.resultset - 1. ResultSet.getString(2) returned 4~6
+2025-03-16 16:55:13.067 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:13.067 INFO  jdbc.resultset - 1. ResultSet.getString(3) returned 우
+2025-03-16 16:55:13.067 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:13.067 INFO  jdbc.resultset - 1. ResultSet.getInt(4) returned 4
+2025-03-16 16:55:13.067 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:13.067 INFO  jdbc.resultset - 1. ResultSet.getString(5) returned 짝
+2025-03-16 16:55:13.067 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:13.067 INFO  jdbc.resultsettable - 
+|-------|-----|----|-------|----|
+|rounds |army |lor |number |ooe |
+|-------|-----|----|-------|----|
+|690532 |4~6  |우   |4      |짝   |
+|-------|-----|----|-------|----|
+
+2025-03-16 16:55:13.068 INFO  jdbc.resultset - 1. ResultSet.next() returned false
+2025-03-16 16:55:13.068 INFO  jdbc.audit - 1. PreparedStatement.isClosed() returned false
+2025-03-16 16:55:13.068 INFO  jdbc.resultset - 1. ResultSet.close() returned void
+2025-03-16 16:55:13.068 INFO  jdbc.audit - 1. PreparedStatement.getMaxRows() returned 0
+2025-03-16 16:55:13.068 INFO  jdbc.audit - 1. PreparedStatement.getQueryTimeout() returned 0
+2025-03-16 16:55:13.068 INFO  jdbc.audit - 1. PreparedStatement.close() returned 
+2025-03-16 16:55:13.068 INFO  jdbc.audit - 1. Connection.commit() returned 
+2025-03-16 16:55:13.068 INFO  jdbc.audit - 1. Connection.setAutoCommit(true) returned 
+2025-03-16 16:55:13.068 INFO  jdbc.audit - 1. Connection.setReadOnly(false) returned 
+2025-03-16 16:55:13.068 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:55:13.068 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:55:36.896 INFO  jdbc.audit - 1. Connection.isValid(5) returned true
+2025-03-16 16:55:36.896 INFO  jdbc.audit - 1. Connection.setReadOnly(true) returned 
+2025-03-16 16:55:36.897 INFO  jdbc.audit - 1. Connection.getAutoCommit() returned true
+2025-03-16 16:55:36.897 INFO  jdbc.audit - 1. Connection.setAutoCommit(false) returned 
+2025-03-16 16:55:36.898 INFO  jdbc.audit - 1. PreparedStatement.new PreparedStatement returned 
+2025-03-16 16:55:36.898 INFO  jdbc.audit - 1. Connection.prepareStatement(select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit ?,?, 1003, 1007) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@3a7ef0c0
+2025-03-16 16:55:36.898 INFO  jdbc.audit - 1. PreparedStatement.setInt(1, 0) returned 
+2025-03-16 16:55:36.898 INFO  jdbc.audit - 1. PreparedStatement.setInt(2, 1) returned 
+2025-03-16 16:55:36.898 INFO  jdbc.sqlonly - select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit 0,1
+
+2025-03-16 16:55:36.898 INFO  jdbc.sqltiming - select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit 0,1
+ {executed in 0 msec}
+2025-03-16 16:55:36.898 INFO  jdbc.resultset - 1. ResultSet.new ResultSet returned 
+2025-03-16 16:55:36.898 INFO  jdbc.audit - 1. PreparedStatement.executeQuery() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@5e533333
+2025-03-16 16:55:36.898 INFO  jdbc.resultset - 1. ResultSet.next() returned true
+2025-03-16 16:55:36.898 INFO  jdbc.resultset - 1. ResultSet.getLong(1) returned 690532
+2025-03-16 16:55:36.899 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:36.899 INFO  jdbc.resultset - 1. ResultSet.getString(2) returned 4~6
+2025-03-16 16:55:36.899 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:36.899 INFO  jdbc.resultset - 1. ResultSet.getString(3) returned 우
+2025-03-16 16:55:36.899 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:36.899 INFO  jdbc.resultset - 1. ResultSet.getInt(4) returned 4
+2025-03-16 16:55:36.899 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:36.899 INFO  jdbc.resultset - 1. ResultSet.getString(5) returned 짝
+2025-03-16 16:55:36.899 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:36.899 INFO  jdbc.resultsettable - 
+|-------|-----|----|-------|----|
+|rounds |army |lor |number |ooe |
+|-------|-----|----|-------|----|
+|690532 |4~6  |우   |4      |짝   |
+|-------|-----|----|-------|----|
+
+2025-03-16 16:55:36.899 INFO  jdbc.resultset - 1. ResultSet.next() returned false
+2025-03-16 16:55:36.899 INFO  jdbc.audit - 1. PreparedStatement.isClosed() returned false
+2025-03-16 16:55:36.899 INFO  jdbc.resultset - 1. ResultSet.close() returned void
+2025-03-16 16:55:36.899 INFO  jdbc.audit - 1. PreparedStatement.getMaxRows() returned 0
+2025-03-16 16:55:36.899 INFO  jdbc.audit - 1. PreparedStatement.getQueryTimeout() returned 0
+2025-03-16 16:55:36.899 INFO  jdbc.audit - 1. PreparedStatement.close() returned 
+2025-03-16 16:55:36.903 INFO  jdbc.audit - 1. PreparedStatement.new PreparedStatement returned 
+2025-03-16 16:55:36.903 INFO  jdbc.audit - 1. Connection.prepareStatement(select count(t1_0.rounds) from tree t1_0, 1003, 1007) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@2bdb1995
+2025-03-16 16:55:36.903 INFO  jdbc.sqlonly - select count(t1_0.rounds) from tree t1_0
+
+2025-03-16 16:55:36.904 INFO  jdbc.sqltiming - select count(t1_0.rounds) from tree t1_0
+ {executed in 1 msec}
+2025-03-16 16:55:36.904 INFO  jdbc.resultset - 1. ResultSet.new ResultSet returned 
+2025-03-16 16:55:36.904 INFO  jdbc.audit - 1. PreparedStatement.executeQuery() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@2e5c675b
+2025-03-16 16:55:36.904 INFO  jdbc.resultset - 1. ResultSet.next() returned true
+2025-03-16 16:55:36.904 INFO  jdbc.resultset - 1. ResultSet.getLong(1) returned 1
+2025-03-16 16:55:36.904 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:36.904 INFO  jdbc.resultsettable - 
+|-------------------|
+|count(t1_0.rounds) |
+|-------------------|
+|1                  |
+|-------------------|
+
+2025-03-16 16:55:36.904 INFO  jdbc.resultset - 1. ResultSet.next() returned false
+2025-03-16 16:55:36.904 INFO  jdbc.audit - 1. PreparedStatement.isClosed() returned false
+2025-03-16 16:55:36.905 INFO  jdbc.resultset - 1. ResultSet.close() returned void
+2025-03-16 16:55:36.905 INFO  jdbc.audit - 1. PreparedStatement.getMaxRows() returned 0
+2025-03-16 16:55:36.905 INFO  jdbc.audit - 1. PreparedStatement.getQueryTimeout() returned 0
+2025-03-16 16:55:36.905 INFO  jdbc.audit - 1. PreparedStatement.close() returned 
+2025-03-16 16:55:36.905 INFO  jdbc.audit - 1. Connection.commit() returned 
+2025-03-16 16:55:36.905 INFO  jdbc.audit - 1. Connection.setAutoCommit(true) returned 
+2025-03-16 16:55:36.905 INFO  jdbc.audit - 1. Connection.setReadOnly(false) returned 
+2025-03-16 16:55:36.905 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:55:36.905 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:55:44.526 INFO  jdbc.audit - 1. Connection.isValid(5) returned true
+2025-03-16 16:55:44.526 INFO  jdbc.audit - 1. Connection.setReadOnly(true) returned 
+2025-03-16 16:55:44.526 INFO  jdbc.audit - 1. Connection.getAutoCommit() returned true
+2025-03-16 16:55:44.526 INFO  jdbc.audit - 1. Connection.setAutoCommit(false) returned 
+2025-03-16 16:55:44.527 INFO  jdbc.audit - 1. PreparedStatement.new PreparedStatement returned 
+2025-03-16 16:55:44.527 INFO  jdbc.audit - 1. Connection.prepareStatement(select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 order by t1_0.rounds desc limit ?,?, 1003, 1007) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@43cc6560
+2025-03-16 16:55:44.527 INFO  jdbc.audit - 1. PreparedStatement.setInt(1, 0) returned 
+2025-03-16 16:55:44.527 INFO  jdbc.audit - 1. PreparedStatement.setInt(2, 1) returned 
+2025-03-16 16:55:44.527 INFO  jdbc.sqlonly - select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 order by t1_0.rounds desc limit 0,1
+
+2025-03-16 16:55:44.528 INFO  jdbc.sqltiming - select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 order by t1_0.rounds desc limit 0,1
+ {executed in 1 msec}
+2025-03-16 16:55:44.528 INFO  jdbc.resultset - 1. ResultSet.new ResultSet returned 
+2025-03-16 16:55:44.528 INFO  jdbc.audit - 1. PreparedStatement.executeQuery() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@7aec2309
+2025-03-16 16:55:44.528 INFO  jdbc.resultset - 1. ResultSet.next() returned true
+2025-03-16 16:55:44.528 INFO  jdbc.resultset - 1. ResultSet.getLong(1) returned 3023515
+2025-03-16 16:55:44.528 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:44.528 INFO  jdbc.resultset - 1. ResultSet.getInt(2) returned 69
+2025-03-16 16:55:44.528 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:44.528 INFO  jdbc.resultset - 1. ResultSet.getString(3) returned 홀
+2025-03-16 16:55:44.528 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:44.528 INFO  jdbc.resultsettable - 
+|--------|-------|----|
+|rounds  |degree |ooe |
+|--------|-------|----|
+|3023515 |69     |홀   |
+|--------|-------|----|
+
+2025-03-16 16:55:44.528 INFO  jdbc.resultset - 1. ResultSet.next() returned false
+2025-03-16 16:55:44.528 INFO  jdbc.audit - 1. PreparedStatement.isClosed() returned false
+2025-03-16 16:55:44.528 INFO  jdbc.resultset - 1. ResultSet.close() returned void
+2025-03-16 16:55:44.528 INFO  jdbc.audit - 1. PreparedStatement.getMaxRows() returned 0
+2025-03-16 16:55:44.528 INFO  jdbc.audit - 1. PreparedStatement.getQueryTimeout() returned 0
+2025-03-16 16:55:44.528 INFO  jdbc.audit - 1. PreparedStatement.close() returned 
+2025-03-16 16:55:44.529 INFO  jdbc.audit - 1. PreparedStatement.new PreparedStatement returned 
+2025-03-16 16:55:44.529 INFO  jdbc.audit - 1. Connection.prepareStatement(select count(t1_0.rounds) from thermo t1_0, 1003, 1007) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@6f474a65
+2025-03-16 16:55:44.529 INFO  jdbc.sqlonly - select count(t1_0.rounds) from thermo t1_0
+
+2025-03-16 16:55:44.530 INFO  jdbc.sqltiming - select count(t1_0.rounds) from thermo t1_0
+ {executed in 1 msec}
+2025-03-16 16:55:44.530 INFO  jdbc.resultset - 1. ResultSet.new ResultSet returned 
+2025-03-16 16:55:44.530 INFO  jdbc.audit - 1. PreparedStatement.executeQuery() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@4734bde8
+2025-03-16 16:55:44.530 INFO  jdbc.resultset - 1. ResultSet.next() returned true
+2025-03-16 16:55:44.530 INFO  jdbc.resultset - 1. ResultSet.getLong(1) returned 1
+2025-03-16 16:55:44.530 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:44.530 INFO  jdbc.resultsettable - 
+|-------------------|
+|count(t1_0.rounds) |
+|-------------------|
+|1                  |
+|-------------------|
+
+2025-03-16 16:55:44.530 INFO  jdbc.resultset - 1. ResultSet.next() returned false
+2025-03-16 16:55:44.530 INFO  jdbc.audit - 1. PreparedStatement.isClosed() returned false
+2025-03-16 16:55:44.530 INFO  jdbc.resultset - 1. ResultSet.close() returned void
+2025-03-16 16:55:44.530 INFO  jdbc.audit - 1. PreparedStatement.getMaxRows() returned 0
+2025-03-16 16:55:44.530 INFO  jdbc.audit - 1. PreparedStatement.getQueryTimeout() returned 0
+2025-03-16 16:55:44.531 INFO  jdbc.audit - 1. PreparedStatement.close() returned 
+2025-03-16 16:55:44.531 INFO  jdbc.audit - 1. Connection.commit() returned 
+2025-03-16 16:55:44.531 INFO  jdbc.audit - 1. Connection.setAutoCommit(true) returned 
+2025-03-16 16:55:44.531 INFO  jdbc.audit - 1. Connection.setReadOnly(false) returned 
+2025-03-16 16:55:44.531 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:55:44.531 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:55:53.476 INFO  jdbc.audit - 1. Connection.isValid(5) returned true
+2025-03-16 16:55:53.477 INFO  jdbc.audit - 1. Connection.setReadOnly(true) returned 
+2025-03-16 16:55:53.477 INFO  jdbc.audit - 1. Connection.getAutoCommit() returned true
+2025-03-16 16:55:53.477 INFO  jdbc.audit - 1. Connection.setAutoCommit(false) returned 
+2025-03-16 16:55:53.478 INFO  jdbc.audit - 1. PreparedStatement.new PreparedStatement returned 
+2025-03-16 16:55:53.478 INFO  jdbc.audit - 1. Connection.prepareStatement(select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit ?,?, 1003, 1007) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@5a6fc7b6
+2025-03-16 16:55:53.478 INFO  jdbc.audit - 1. PreparedStatement.setInt(1, 0) returned 
+2025-03-16 16:55:53.478 INFO  jdbc.audit - 1. PreparedStatement.setInt(2, 5) returned 
+2025-03-16 16:55:53.478 INFO  jdbc.sqlonly - select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit 0,5
+
+2025-03-16 16:55:53.479 INFO  jdbc.sqltiming - select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit 0,5
+ {executed in 1 msec}
+2025-03-16 16:55:53.479 INFO  jdbc.resultset - 1. ResultSet.new ResultSet returned 
+2025-03-16 16:55:53.479 INFO  jdbc.audit - 1. PreparedStatement.executeQuery() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@67646a10
+2025-03-16 16:55:53.479 INFO  jdbc.resultset - 1. ResultSet.next() returned true
+2025-03-16 16:55:53.479 INFO  jdbc.resultset - 1. ResultSet.getLong(1) returned 690532
+2025-03-16 16:55:53.479 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:53.479 INFO  jdbc.resultset - 1. ResultSet.getString(2) returned 4~6
+2025-03-16 16:55:53.479 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:53.479 INFO  jdbc.resultset - 1. ResultSet.getString(3) returned 우
+2025-03-16 16:55:53.479 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:53.479 INFO  jdbc.resultset - 1. ResultSet.getInt(4) returned 4
+2025-03-16 16:55:53.479 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:53.479 INFO  jdbc.resultset - 1. ResultSet.getString(5) returned 짝
+2025-03-16 16:55:53.479 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:53.479 INFO  jdbc.resultsettable - 
+|-------|-----|----|-------|----|
+|rounds |army |lor |number |ooe |
+|-------|-----|----|-------|----|
+|690532 |4~6  |우   |4      |짝   |
+|-------|-----|----|-------|----|
+
+2025-03-16 16:55:53.479 INFO  jdbc.resultset - 1. ResultSet.next() returned false
+2025-03-16 16:55:53.479 INFO  jdbc.audit - 1. PreparedStatement.isClosed() returned false
+2025-03-16 16:55:53.479 INFO  jdbc.resultset - 1. ResultSet.close() returned void
+2025-03-16 16:55:53.479 INFO  jdbc.audit - 1. PreparedStatement.getMaxRows() returned 0
+2025-03-16 16:55:53.479 INFO  jdbc.audit - 1. PreparedStatement.getQueryTimeout() returned 0
+2025-03-16 16:55:53.479 INFO  jdbc.audit - 1. PreparedStatement.close() returned 
+2025-03-16 16:55:53.479 INFO  jdbc.audit - 1. Connection.commit() returned 
+2025-03-16 16:55:53.479 INFO  jdbc.audit - 1. Connection.setAutoCommit(true) returned 
+2025-03-16 16:55:53.480 INFO  jdbc.audit - 1. Connection.setReadOnly(false) returned 
+2025-03-16 16:55:53.480 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:55:53.480 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:55:53.480 INFO  jdbc.audit - 1. Connection.setReadOnly(true) returned 
+2025-03-16 16:55:53.481 INFO  jdbc.audit - 1. Connection.getAutoCommit() returned true
+2025-03-16 16:55:53.481 INFO  jdbc.audit - 1. Connection.setAutoCommit(false) returned 
+2025-03-16 16:55:53.481 INFO  jdbc.audit - 1. PreparedStatement.new PreparedStatement returned 
+2025-03-16 16:55:53.481 INFO  jdbc.audit - 1. Connection.prepareStatement(select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit ?,?, 1003, 1007) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@207c9610
+2025-03-16 16:55:53.481 INFO  jdbc.audit - 1. PreparedStatement.setInt(1, 0) returned 
+2025-03-16 16:55:53.481 INFO  jdbc.audit - 1. PreparedStatement.setInt(2, 5) returned 
+2025-03-16 16:55:53.481 INFO  jdbc.sqlonly - select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit 0,5
+
+2025-03-16 16:55:53.482 INFO  jdbc.sqltiming - select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit 0,5
+ {executed in 1 msec}
+2025-03-16 16:55:53.482 INFO  jdbc.resultset - 1. ResultSet.new ResultSet returned 
+2025-03-16 16:55:53.482 INFO  jdbc.audit - 1. PreparedStatement.executeQuery() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@74e4de4f
+2025-03-16 16:55:53.482 INFO  jdbc.resultset - 1. ResultSet.next() returned true
+2025-03-16 16:55:53.482 INFO  jdbc.resultset - 1. ResultSet.getLong(1) returned 690532
+2025-03-16 16:55:53.482 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:53.482 INFO  jdbc.resultset - 1. ResultSet.getString(2) returned 4~6
+2025-03-16 16:55:53.482 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:53.482 INFO  jdbc.resultset - 1. ResultSet.getString(3) returned 우
+2025-03-16 16:55:53.482 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:53.482 INFO  jdbc.resultset - 1. ResultSet.getInt(4) returned 4
+2025-03-16 16:55:53.482 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:53.482 INFO  jdbc.resultset - 1. ResultSet.getString(5) returned 짝
+2025-03-16 16:55:53.482 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:53.482 INFO  jdbc.resultsettable - 
+|-------|-----|----|-------|----|
+|rounds |army |lor |number |ooe |
+|-------|-----|----|-------|----|
+|690532 |4~6  |우   |4      |짝   |
+|-------|-----|----|-------|----|
+
+2025-03-16 16:55:53.482 INFO  jdbc.resultset - 1. ResultSet.next() returned false
+2025-03-16 16:55:53.482 INFO  jdbc.audit - 1. PreparedStatement.isClosed() returned false
+2025-03-16 16:55:53.482 INFO  jdbc.resultset - 1. ResultSet.close() returned void
+2025-03-16 16:55:53.482 INFO  jdbc.audit - 1. PreparedStatement.getMaxRows() returned 0
+2025-03-16 16:55:53.482 INFO  jdbc.audit - 1. PreparedStatement.getQueryTimeout() returned 0
+2025-03-16 16:55:53.482 INFO  jdbc.audit - 1. PreparedStatement.close() returned 
+2025-03-16 16:55:53.483 INFO  jdbc.audit - 1. Connection.commit() returned 
+2025-03-16 16:55:53.483 INFO  jdbc.audit - 1. Connection.setAutoCommit(true) returned 
+2025-03-16 16:55:53.483 INFO  jdbc.audit - 1. Connection.setReadOnly(false) returned 
+2025-03-16 16:55:53.483 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:55:53.483 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:55:53.491 WARN  o.s.d.w.c.SpringDataJacksonConfiguration$PageModule$WarningLoggingModifier - Serializing PageImpl instances as-is is not supported, meaning that there is no guarantee about the stability of the resulting JSON structure!
+	For a stable JSON structure, please use Spring Data's PagedModel (globally via @EnableSpringDataWebSupport(pageSerializationMode = VIA_DTO))
+	or Spring HATEOAS and Spring Data's PagedResourcesAssembler as documented in https://docs.spring.io/spring-data/commons/reference/repositories/core-extensions.html#core.web.pageables.
+
+2025-03-16 16:55:58.895 INFO  jdbc.audit - 1. Connection.isValid(5) returned true
+2025-03-16 16:55:58.895 INFO  jdbc.audit - 1. Connection.getAutoCommit() returned true
+2025-03-16 16:55:58.895 INFO  jdbc.audit - 1. Connection.setAutoCommit(false) returned 
+2025-03-16 16:55:58.896 INFO  jdbc.audit - 1. PreparedStatement.new PreparedStatement returned 
+2025-03-16 16:55:58.896 INFO  jdbc.audit - 1. Connection.prepareStatement(select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit ?,?, 1003, 1007) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@466e0363
+2025-03-16 16:55:58.896 INFO  jdbc.audit - 1. PreparedStatement.setInt(1, 0) returned 
+2025-03-16 16:55:58.896 INFO  jdbc.audit - 1. PreparedStatement.setInt(2, 1000) returned 
+2025-03-16 16:55:58.896 INFO  jdbc.sqlonly - select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit 0,1000
+
+2025-03-16 16:55:58.897 INFO  jdbc.sqltiming - select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit 0,1000
+ {executed in 1 msec}
+2025-03-16 16:55:58.897 INFO  jdbc.resultset - 1. ResultSet.new ResultSet returned 
+2025-03-16 16:55:58.897 INFO  jdbc.audit - 1. PreparedStatement.executeQuery() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@7b3af9f7
+2025-03-16 16:55:58.897 INFO  jdbc.resultset - 1. ResultSet.next() returned true
+2025-03-16 16:55:58.897 INFO  jdbc.resultset - 1. ResultSet.getLong(1) returned 690532
+2025-03-16 16:55:58.897 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.897 INFO  jdbc.resultset - 1. ResultSet.getString(2) returned 4~6
+2025-03-16 16:55:58.897 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.897 INFO  jdbc.resultset - 1. ResultSet.getString(3) returned 우
+2025-03-16 16:55:58.897 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.897 INFO  jdbc.resultset - 1. ResultSet.getInt(4) returned 4
+2025-03-16 16:55:58.897 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.897 INFO  jdbc.resultset - 1. ResultSet.getString(5) returned 짝
+2025-03-16 16:55:58.897 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.897 INFO  jdbc.resultsettable - 
+|-------|-----|----|-------|----|
+|rounds |army |lor |number |ooe |
+|-------|-----|----|-------|----|
+|690532 |4~6  |우   |4      |짝   |
+|-------|-----|----|-------|----|
+
+2025-03-16 16:55:58.897 INFO  jdbc.resultset - 1. ResultSet.next() returned false
+2025-03-16 16:55:58.897 INFO  jdbc.audit - 1. PreparedStatement.isClosed() returned false
+2025-03-16 16:55:58.897 INFO  jdbc.resultset - 1. ResultSet.close() returned void
+2025-03-16 16:55:58.897 INFO  jdbc.audit - 1. PreparedStatement.getMaxRows() returned 0
+2025-03-16 16:55:58.897 INFO  jdbc.audit - 1. PreparedStatement.getQueryTimeout() returned 0
+2025-03-16 16:55:58.897 INFO  jdbc.audit - 1. PreparedStatement.close() returned 
+2025-03-16 16:55:58.899 INFO  jdbc.audit - 1. Connection.commit() returned 
+2025-03-16 16:55:58.899 INFO  jdbc.audit - 1. Connection.setAutoCommit(true) returned 
+2025-03-16 16:55:58.899 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:55:58.899 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:55:58.899 INFO  jdbc.audit - 1. Connection.getAutoCommit() returned true
+2025-03-16 16:55:58.899 INFO  jdbc.audit - 1. Connection.setAutoCommit(false) returned 
+2025-03-16 16:55:58.900 INFO  jdbc.audit - 1. PreparedStatement.new PreparedStatement returned 
+2025-03-16 16:55:58.900 INFO  jdbc.audit - 1. Connection.prepareStatement(select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit ?,?, 1003, 1007) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@2956fb14
+2025-03-16 16:55:58.900 INFO  jdbc.audit - 1. PreparedStatement.setInt(1, 0) returned 
+2025-03-16 16:55:58.900 INFO  jdbc.audit - 1. PreparedStatement.setInt(2, 1000) returned 
+2025-03-16 16:55:58.900 INFO  jdbc.sqlonly - select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit 0,1000
+
+2025-03-16 16:55:58.900 INFO  jdbc.sqltiming - select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit 0,1000
+ {executed in 0 msec}
+2025-03-16 16:55:58.900 INFO  jdbc.resultset - 1. ResultSet.new ResultSet returned 
+2025-03-16 16:55:58.900 INFO  jdbc.audit - 1. PreparedStatement.executeQuery() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@73673073
+2025-03-16 16:55:58.901 INFO  jdbc.resultset - 1. ResultSet.next() returned true
+2025-03-16 16:55:58.901 INFO  jdbc.resultset - 1. ResultSet.getLong(1) returned 690532
+2025-03-16 16:55:58.901 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.901 INFO  jdbc.resultset - 1. ResultSet.getString(2) returned 4~6
+2025-03-16 16:55:58.901 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.901 INFO  jdbc.resultset - 1. ResultSet.getString(3) returned 우
+2025-03-16 16:55:58.901 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.901 INFO  jdbc.resultset - 1. ResultSet.getInt(4) returned 4
+2025-03-16 16:55:58.901 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.901 INFO  jdbc.resultset - 1. ResultSet.getString(5) returned 짝
+2025-03-16 16:55:58.901 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.902 INFO  jdbc.resultsettable - 
+|-------|-----|----|-------|----|
+|rounds |army |lor |number |ooe |
+|-------|-----|----|-------|----|
+|690532 |4~6  |우   |4      |짝   |
+|-------|-----|----|-------|----|
+
+2025-03-16 16:55:58.902 INFO  jdbc.resultset - 1. ResultSet.next() returned false
+2025-03-16 16:55:58.902 INFO  jdbc.audit - 1. PreparedStatement.isClosed() returned false
+2025-03-16 16:55:58.902 INFO  jdbc.resultset - 1. ResultSet.close() returned void
+2025-03-16 16:55:58.902 INFO  jdbc.audit - 1. PreparedStatement.getMaxRows() returned 0
+2025-03-16 16:55:58.902 INFO  jdbc.audit - 1. PreparedStatement.getQueryTimeout() returned 0
+2025-03-16 16:55:58.902 INFO  jdbc.audit - 1. PreparedStatement.close() returned 
+2025-03-16 16:55:58.902 INFO  jdbc.audit - 1. Connection.commit() returned 
+2025-03-16 16:55:58.902 INFO  jdbc.audit - 1. Connection.setAutoCommit(true) returned 
+2025-03-16 16:55:58.902 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:55:58.902 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:55:58.902 INFO  jdbc.audit - 1. Connection.getAutoCommit() returned true
+2025-03-16 16:55:58.903 INFO  jdbc.audit - 1. Connection.setAutoCommit(false) returned 
+2025-03-16 16:55:58.903 INFO  jdbc.audit - 1. PreparedStatement.new PreparedStatement returned 
+2025-03-16 16:55:58.903 INFO  jdbc.audit - 1. Connection.prepareStatement(select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit ?,?, 1003, 1007) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@706a255b
+2025-03-16 16:55:58.903 INFO  jdbc.audit - 1. PreparedStatement.setInt(1, 0) returned 
+2025-03-16 16:55:58.903 INFO  jdbc.audit - 1. PreparedStatement.setInt(2, 1000) returned 
+2025-03-16 16:55:58.903 INFO  jdbc.sqlonly - select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit 0,1000
+
+2025-03-16 16:55:58.904 INFO  jdbc.sqltiming - select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit 0,1000
+ {executed in 1 msec}
+2025-03-16 16:55:58.904 INFO  jdbc.resultset - 1. ResultSet.new ResultSet returned 
+2025-03-16 16:55:58.904 INFO  jdbc.audit - 1. PreparedStatement.executeQuery() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@52b9432a
+2025-03-16 16:55:58.904 INFO  jdbc.resultset - 1. ResultSet.next() returned true
+2025-03-16 16:55:58.904 INFO  jdbc.resultset - 1. ResultSet.getLong(1) returned 690532
+2025-03-16 16:55:58.904 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.904 INFO  jdbc.resultset - 1. ResultSet.getString(2) returned 4~6
+2025-03-16 16:55:58.904 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.904 INFO  jdbc.resultset - 1. ResultSet.getString(3) returned 우
+2025-03-16 16:55:58.904 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.904 INFO  jdbc.resultset - 1. ResultSet.getInt(4) returned 4
+2025-03-16 16:55:58.904 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.904 INFO  jdbc.resultset - 1. ResultSet.getString(5) returned 짝
+2025-03-16 16:55:58.904 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.904 INFO  jdbc.resultsettable - 
+|-------|-----|----|-------|----|
+|rounds |army |lor |number |ooe |
+|-------|-----|----|-------|----|
+|690532 |4~6  |우   |4      |짝   |
+|-------|-----|----|-------|----|
+
+2025-03-16 16:55:58.904 INFO  jdbc.resultset - 1. ResultSet.next() returned false
+2025-03-16 16:55:58.904 INFO  jdbc.audit - 1. PreparedStatement.isClosed() returned false
+2025-03-16 16:55:58.904 INFO  jdbc.resultset - 1. ResultSet.close() returned void
+2025-03-16 16:55:58.904 INFO  jdbc.audit - 1. PreparedStatement.getMaxRows() returned 0
+2025-03-16 16:55:58.904 INFO  jdbc.audit - 1. PreparedStatement.getQueryTimeout() returned 0
+2025-03-16 16:55:58.904 INFO  jdbc.audit - 1. PreparedStatement.close() returned 
+2025-03-16 16:55:58.905 INFO  jdbc.audit - 1. Connection.commit() returned 
+2025-03-16 16:55:58.905 INFO  jdbc.audit - 1. Connection.setAutoCommit(true) returned 
+2025-03-16 16:55:58.905 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:55:58.905 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:55:58.905 INFO  jdbc.audit - 1. Connection.getAutoCommit() returned true
+2025-03-16 16:55:58.905 INFO  jdbc.audit - 1. Connection.setAutoCommit(false) returned 
+2025-03-16 16:55:58.906 INFO  jdbc.audit - 1. PreparedStatement.new PreparedStatement returned 
+2025-03-16 16:55:58.906 INFO  jdbc.audit - 1. Connection.prepareStatement(select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit ?,?, 1003, 1007) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@75077519
+2025-03-16 16:55:58.906 INFO  jdbc.audit - 1. PreparedStatement.setInt(1, 0) returned 
+2025-03-16 16:55:58.906 INFO  jdbc.audit - 1. PreparedStatement.setInt(2, 1000) returned 
+2025-03-16 16:55:58.906 INFO  jdbc.sqlonly - select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit 0,1000
+
+2025-03-16 16:55:58.907 INFO  jdbc.sqltiming - select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit 0,1000
+ {executed in 1 msec}
+2025-03-16 16:55:58.907 INFO  jdbc.resultset - 1. ResultSet.new ResultSet returned 
+2025-03-16 16:55:58.907 INFO  jdbc.audit - 1. PreparedStatement.executeQuery() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@350c032a
+2025-03-16 16:55:58.907 INFO  jdbc.resultset - 1. ResultSet.next() returned true
+2025-03-16 16:55:58.907 INFO  jdbc.resultset - 1. ResultSet.getLong(1) returned 690532
+2025-03-16 16:55:58.907 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.907 INFO  jdbc.resultset - 1. ResultSet.getString(2) returned 4~6
+2025-03-16 16:55:58.907 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.907 INFO  jdbc.resultset - 1. ResultSet.getString(3) returned 우
+2025-03-16 16:55:58.907 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.907 INFO  jdbc.resultset - 1. ResultSet.getInt(4) returned 4
+2025-03-16 16:55:58.907 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.907 INFO  jdbc.resultset - 1. ResultSet.getString(5) returned 짝
+2025-03-16 16:55:58.907 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.907 INFO  jdbc.resultsettable - 
+|-------|-----|----|-------|----|
+|rounds |army |lor |number |ooe |
+|-------|-----|----|-------|----|
+|690532 |4~6  |우   |4      |짝   |
+|-------|-----|----|-------|----|
+
+2025-03-16 16:55:58.907 INFO  jdbc.resultset - 1. ResultSet.next() returned false
+2025-03-16 16:55:58.907 INFO  jdbc.audit - 1. PreparedStatement.isClosed() returned false
+2025-03-16 16:55:58.907 INFO  jdbc.resultset - 1. ResultSet.close() returned void
+2025-03-16 16:55:58.907 INFO  jdbc.audit - 1. PreparedStatement.getMaxRows() returned 0
+2025-03-16 16:55:58.907 INFO  jdbc.audit - 1. PreparedStatement.getQueryTimeout() returned 0
+2025-03-16 16:55:58.907 INFO  jdbc.audit - 1. PreparedStatement.close() returned 
+2025-03-16 16:55:58.908 INFO  jdbc.audit - 1. Connection.commit() returned 
+2025-03-16 16:55:58.908 INFO  jdbc.audit - 1. Connection.setAutoCommit(true) returned 
+2025-03-16 16:55:58.908 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:55:58.908 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:55:58.908 INFO  jdbc.audit - 1. Connection.getAutoCommit() returned true
+2025-03-16 16:55:58.908 INFO  jdbc.audit - 1. Connection.setAutoCommit(false) returned 
+2025-03-16 16:55:58.909 INFO  jdbc.audit - 1. PreparedStatement.new PreparedStatement returned 
+2025-03-16 16:55:58.909 INFO  jdbc.audit - 1. Connection.prepareStatement(select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit ?,?, 1003, 1007) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@39c53fa4
+2025-03-16 16:55:58.909 INFO  jdbc.audit - 1. PreparedStatement.setInt(1, 0) returned 
+2025-03-16 16:55:58.909 INFO  jdbc.audit - 1. PreparedStatement.setInt(2, 1000) returned 
+2025-03-16 16:55:58.909 INFO  jdbc.sqlonly - select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit 0,1000
+
+2025-03-16 16:55:58.909 INFO  jdbc.sqltiming - select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit 0,1000
+ {executed in 0 msec}
+2025-03-16 16:55:58.909 INFO  jdbc.resultset - 1. ResultSet.new ResultSet returned 
+2025-03-16 16:55:58.909 INFO  jdbc.audit - 1. PreparedStatement.executeQuery() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@1492ee55
+2025-03-16 16:55:58.909 INFO  jdbc.resultset - 1. ResultSet.next() returned true
+2025-03-16 16:55:58.909 INFO  jdbc.resultset - 1. ResultSet.getLong(1) returned 690532
+2025-03-16 16:55:58.909 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.909 INFO  jdbc.resultset - 1. ResultSet.getString(2) returned 4~6
+2025-03-16 16:55:58.909 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.909 INFO  jdbc.resultset - 1. ResultSet.getString(3) returned 우
+2025-03-16 16:55:58.909 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.909 INFO  jdbc.resultset - 1. ResultSet.getInt(4) returned 4
+2025-03-16 16:55:58.909 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.909 INFO  jdbc.resultset - 1. ResultSet.getString(5) returned 짝
+2025-03-16 16:55:58.909 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.909 INFO  jdbc.resultsettable - 
+|-------|-----|----|-------|----|
+|rounds |army |lor |number |ooe |
+|-------|-----|----|-------|----|
+|690532 |4~6  |우   |4      |짝   |
+|-------|-----|----|-------|----|
+
+2025-03-16 16:55:58.909 INFO  jdbc.resultset - 1. ResultSet.next() returned false
+2025-03-16 16:55:58.909 INFO  jdbc.audit - 1. PreparedStatement.isClosed() returned false
+2025-03-16 16:55:58.909 INFO  jdbc.resultset - 1. ResultSet.close() returned void
+2025-03-16 16:55:58.909 INFO  jdbc.audit - 1. PreparedStatement.getMaxRows() returned 0
+2025-03-16 16:55:58.909 INFO  jdbc.audit - 1. PreparedStatement.getQueryTimeout() returned 0
+2025-03-16 16:55:58.909 INFO  jdbc.audit - 1. PreparedStatement.close() returned 
+2025-03-16 16:55:58.911 INFO  jdbc.audit - 1. Connection.commit() returned 
+2025-03-16 16:55:58.911 INFO  jdbc.audit - 1. Connection.setAutoCommit(true) returned 
+2025-03-16 16:55:58.911 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:55:58.911 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:55:58.911 INFO  jdbc.audit - 1. Connection.getAutoCommit() returned true
+2025-03-16 16:55:58.911 INFO  jdbc.audit - 1. Connection.setAutoCommit(false) returned 
+2025-03-16 16:55:58.913 INFO  jdbc.audit - 1. PreparedStatement.new PreparedStatement returned 
+2025-03-16 16:55:58.913 INFO  jdbc.audit - 1. Connection.prepareStatement(select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit ?,?, 1003, 1007) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@9ad9ec2
+2025-03-16 16:55:58.913 INFO  jdbc.audit - 1. PreparedStatement.setInt(1, 0) returned 
+2025-03-16 16:55:58.913 INFO  jdbc.audit - 1. PreparedStatement.setInt(2, 1000) returned 
+2025-03-16 16:55:58.913 INFO  jdbc.sqlonly - select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit 0,1000
+
+2025-03-16 16:55:58.913 INFO  jdbc.sqltiming - select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit 0,1000
+ {executed in 0 msec}
+2025-03-16 16:55:58.913 INFO  jdbc.resultset - 1. ResultSet.new ResultSet returned 
+2025-03-16 16:55:58.913 INFO  jdbc.audit - 1. PreparedStatement.executeQuery() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@2f86eb97
+2025-03-16 16:55:58.913 INFO  jdbc.resultset - 1. ResultSet.next() returned true
+2025-03-16 16:55:58.913 INFO  jdbc.resultset - 1. ResultSet.getLong(1) returned 690532
+2025-03-16 16:55:58.913 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.913 INFO  jdbc.resultset - 1. ResultSet.getString(2) returned 4~6
+2025-03-16 16:55:58.913 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.913 INFO  jdbc.resultset - 1. ResultSet.getString(3) returned 우
+2025-03-16 16:55:58.913 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.913 INFO  jdbc.resultset - 1. ResultSet.getInt(4) returned 4
+2025-03-16 16:55:58.913 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.913 INFO  jdbc.resultset - 1. ResultSet.getString(5) returned 짝
+2025-03-16 16:55:58.913 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.913 INFO  jdbc.resultsettable - 
+|-------|-----|----|-------|----|
+|rounds |army |lor |number |ooe |
+|-------|-----|----|-------|----|
+|690532 |4~6  |우   |4      |짝   |
+|-------|-----|----|-------|----|
+
+2025-03-16 16:55:58.913 INFO  jdbc.resultset - 1. ResultSet.next() returned false
+2025-03-16 16:55:58.913 INFO  jdbc.audit - 1. PreparedStatement.isClosed() returned false
+2025-03-16 16:55:58.913 INFO  jdbc.resultset - 1. ResultSet.close() returned void
+2025-03-16 16:55:58.913 INFO  jdbc.audit - 1. PreparedStatement.getMaxRows() returned 0
+2025-03-16 16:55:58.913 INFO  jdbc.audit - 1. PreparedStatement.getQueryTimeout() returned 0
+2025-03-16 16:55:58.913 INFO  jdbc.audit - 1. PreparedStatement.close() returned 
+2025-03-16 16:55:58.914 INFO  jdbc.audit - 1. Connection.commit() returned 
+2025-03-16 16:55:58.914 INFO  jdbc.audit - 1. Connection.setAutoCommit(true) returned 
+2025-03-16 16:55:58.914 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:55:58.914 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:55:58.914 INFO  jdbc.audit - 1. Connection.getAutoCommit() returned true
+2025-03-16 16:55:58.915 INFO  jdbc.audit - 1. Connection.setAutoCommit(false) returned 
+2025-03-16 16:55:58.915 INFO  jdbc.audit - 1. PreparedStatement.new PreparedStatement returned 
+2025-03-16 16:55:58.915 INFO  jdbc.audit - 1. Connection.prepareStatement(select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit ?,?, 1003, 1007) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@650bbc27
+2025-03-16 16:55:58.915 INFO  jdbc.audit - 1. PreparedStatement.setInt(1, 0) returned 
+2025-03-16 16:55:58.915 INFO  jdbc.audit - 1. PreparedStatement.setInt(2, 1000) returned 
+2025-03-16 16:55:58.915 INFO  jdbc.sqlonly - select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit 0,1000
+
+2025-03-16 16:55:58.916 INFO  jdbc.sqltiming - select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit 0,1000
+ {executed in 1 msec}
+2025-03-16 16:55:58.916 INFO  jdbc.resultset - 1. ResultSet.new ResultSet returned 
+2025-03-16 16:55:58.916 INFO  jdbc.audit - 1. PreparedStatement.executeQuery() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@1e8fa987
+2025-03-16 16:55:58.916 INFO  jdbc.resultset - 1. ResultSet.next() returned true
+2025-03-16 16:55:58.916 INFO  jdbc.resultset - 1. ResultSet.getLong(1) returned 690532
+2025-03-16 16:55:58.916 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.916 INFO  jdbc.resultset - 1. ResultSet.getString(2) returned 4~6
+2025-03-16 16:55:58.916 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.916 INFO  jdbc.resultset - 1. ResultSet.getString(3) returned 우
+2025-03-16 16:55:58.916 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.916 INFO  jdbc.resultset - 1. ResultSet.getInt(4) returned 4
+2025-03-16 16:55:58.916 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.916 INFO  jdbc.resultset - 1. ResultSet.getString(5) returned 짝
+2025-03-16 16:55:58.916 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.916 INFO  jdbc.resultsettable - 
+|-------|-----|----|-------|----|
+|rounds |army |lor |number |ooe |
+|-------|-----|----|-------|----|
+|690532 |4~6  |우   |4      |짝   |
+|-------|-----|----|-------|----|
+
+2025-03-16 16:55:58.916 INFO  jdbc.resultset - 1. ResultSet.next() returned false
+2025-03-16 16:55:58.916 INFO  jdbc.audit - 1. PreparedStatement.isClosed() returned false
+2025-03-16 16:55:58.916 INFO  jdbc.resultset - 1. ResultSet.close() returned void
+2025-03-16 16:55:58.916 INFO  jdbc.audit - 1. PreparedStatement.getMaxRows() returned 0
+2025-03-16 16:55:58.916 INFO  jdbc.audit - 1. PreparedStatement.getQueryTimeout() returned 0
+2025-03-16 16:55:58.916 INFO  jdbc.audit - 1. PreparedStatement.close() returned 
+2025-03-16 16:55:58.917 INFO  jdbc.audit - 1. Connection.commit() returned 
+2025-03-16 16:55:58.917 INFO  jdbc.audit - 1. Connection.setAutoCommit(true) returned 
+2025-03-16 16:55:58.917 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:55:58.917 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:55:58.917 INFO  jdbc.audit - 1. Connection.getAutoCommit() returned true
+2025-03-16 16:55:58.917 INFO  jdbc.audit - 1. Connection.setAutoCommit(false) returned 
+2025-03-16 16:55:58.918 INFO  jdbc.audit - 1. PreparedStatement.new PreparedStatement returned 
+2025-03-16 16:55:58.918 INFO  jdbc.audit - 1. Connection.prepareStatement(select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit ?,?, 1003, 1007) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@6be59a1d
+2025-03-16 16:55:58.918 INFO  jdbc.audit - 1. PreparedStatement.setInt(1, 0) returned 
+2025-03-16 16:55:58.918 INFO  jdbc.audit - 1. PreparedStatement.setInt(2, 1000) returned 
+2025-03-16 16:55:58.918 INFO  jdbc.sqlonly - select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit 0,1000
+
+2025-03-16 16:55:58.918 INFO  jdbc.sqltiming - select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit 0,1000
+ {executed in 0 msec}
+2025-03-16 16:55:58.918 INFO  jdbc.resultset - 1. ResultSet.new ResultSet returned 
+2025-03-16 16:55:58.918 INFO  jdbc.audit - 1. PreparedStatement.executeQuery() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@1794a32d
+2025-03-16 16:55:58.918 INFO  jdbc.resultset - 1. ResultSet.next() returned true
+2025-03-16 16:55:58.918 INFO  jdbc.resultset - 1. ResultSet.getLong(1) returned 690532
+2025-03-16 16:55:58.918 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.918 INFO  jdbc.resultset - 1. ResultSet.getString(2) returned 4~6
+2025-03-16 16:55:58.919 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.919 INFO  jdbc.resultset - 1. ResultSet.getString(3) returned 우
+2025-03-16 16:55:58.919 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.919 INFO  jdbc.resultset - 1. ResultSet.getInt(4) returned 4
+2025-03-16 16:55:58.919 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.919 INFO  jdbc.resultset - 1. ResultSet.getString(5) returned 짝
+2025-03-16 16:55:58.919 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.919 INFO  jdbc.resultsettable - 
+|-------|-----|----|-------|----|
+|rounds |army |lor |number |ooe |
+|-------|-----|----|-------|----|
+|690532 |4~6  |우   |4      |짝   |
+|-------|-----|----|-------|----|
+
+2025-03-16 16:55:58.919 INFO  jdbc.resultset - 1. ResultSet.next() returned false
+2025-03-16 16:55:58.919 INFO  jdbc.audit - 1. PreparedStatement.isClosed() returned false
+2025-03-16 16:55:58.919 INFO  jdbc.resultset - 1. ResultSet.close() returned void
+2025-03-16 16:55:58.919 INFO  jdbc.audit - 1. PreparedStatement.getMaxRows() returned 0
+2025-03-16 16:55:58.919 INFO  jdbc.audit - 1. PreparedStatement.getQueryTimeout() returned 0
+2025-03-16 16:55:58.919 INFO  jdbc.audit - 1. PreparedStatement.close() returned 
+2025-03-16 16:55:58.919 INFO  jdbc.audit - 1. Connection.commit() returned 
+2025-03-16 16:55:58.920 INFO  jdbc.audit - 1. Connection.setAutoCommit(true) returned 
+2025-03-16 16:55:58.920 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:55:58.920 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:55:58.920 INFO  jdbc.audit - 1. Connection.getAutoCommit() returned true
+2025-03-16 16:55:58.920 INFO  jdbc.audit - 1. Connection.setAutoCommit(false) returned 
+2025-03-16 16:55:58.921 INFO  jdbc.audit - 1. PreparedStatement.new PreparedStatement returned 
+2025-03-16 16:55:58.921 INFO  jdbc.audit - 1. Connection.prepareStatement(select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit ?,?, 1003, 1007) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@5bb30701
+2025-03-16 16:55:58.921 INFO  jdbc.audit - 1. PreparedStatement.setInt(1, 0) returned 
+2025-03-16 16:55:58.921 INFO  jdbc.audit - 1. PreparedStatement.setInt(2, 1000) returned 
+2025-03-16 16:55:58.921 INFO  jdbc.sqlonly - select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit 0,1000
+
+2025-03-16 16:55:58.921 INFO  jdbc.sqltiming - select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit 0,1000
+ {executed in 0 msec}
+2025-03-16 16:55:58.921 INFO  jdbc.resultset - 1. ResultSet.new ResultSet returned 
+2025-03-16 16:55:58.921 INFO  jdbc.audit - 1. PreparedStatement.executeQuery() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@40618e1e
+2025-03-16 16:55:58.921 INFO  jdbc.resultset - 1. ResultSet.next() returned true
+2025-03-16 16:55:58.921 INFO  jdbc.resultset - 1. ResultSet.getLong(1) returned 690532
+2025-03-16 16:55:58.921 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.921 INFO  jdbc.resultset - 1. ResultSet.getString(2) returned 4~6
+2025-03-16 16:55:58.921 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.921 INFO  jdbc.resultset - 1. ResultSet.getString(3) returned 우
+2025-03-16 16:55:58.921 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.921 INFO  jdbc.resultset - 1. ResultSet.getInt(4) returned 4
+2025-03-16 16:55:58.921 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.921 INFO  jdbc.resultset - 1. ResultSet.getString(5) returned 짝
+2025-03-16 16:55:58.921 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.921 INFO  jdbc.resultsettable - 
+|-------|-----|----|-------|----|
+|rounds |army |lor |number |ooe |
+|-------|-----|----|-------|----|
+|690532 |4~6  |우   |4      |짝   |
+|-------|-----|----|-------|----|
+
+2025-03-16 16:55:58.922 INFO  jdbc.resultset - 1. ResultSet.next() returned false
+2025-03-16 16:55:58.922 INFO  jdbc.audit - 1. PreparedStatement.isClosed() returned false
+2025-03-16 16:55:58.922 INFO  jdbc.resultset - 1. ResultSet.close() returned void
+2025-03-16 16:55:58.922 INFO  jdbc.audit - 1. PreparedStatement.getMaxRows() returned 0
+2025-03-16 16:55:58.922 INFO  jdbc.audit - 1. PreparedStatement.getQueryTimeout() returned 0
+2025-03-16 16:55:58.922 INFO  jdbc.audit - 1. PreparedStatement.close() returned 
+2025-03-16 16:55:58.922 INFO  jdbc.audit - 1. Connection.commit() returned 
+2025-03-16 16:55:58.922 INFO  jdbc.audit - 1. Connection.setAutoCommit(true) returned 
+2025-03-16 16:55:58.922 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:55:58.922 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:55:58.922 INFO  jdbc.audit - 1. Connection.getAutoCommit() returned true
+2025-03-16 16:55:58.923 INFO  jdbc.audit - 1. Connection.setAutoCommit(false) returned 
+2025-03-16 16:55:58.924 INFO  jdbc.audit - 1. PreparedStatement.new PreparedStatement returned 
+2025-03-16 16:55:58.924 INFO  jdbc.audit - 1. Connection.prepareStatement(select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit ?,?, 1003, 1007) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@43dd4711
+2025-03-16 16:55:58.924 INFO  jdbc.audit - 1. PreparedStatement.setInt(1, 0) returned 
+2025-03-16 16:55:58.924 INFO  jdbc.audit - 1. PreparedStatement.setInt(2, 1000) returned 
+2025-03-16 16:55:58.924 INFO  jdbc.sqlonly - select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit 0,1000
+
+2025-03-16 16:55:58.924 INFO  jdbc.sqltiming - select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit 0,1000
+ {executed in 0 msec}
+2025-03-16 16:55:58.924 INFO  jdbc.resultset - 1. ResultSet.new ResultSet returned 
+2025-03-16 16:55:58.924 INFO  jdbc.audit - 1. PreparedStatement.executeQuery() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@7b2ac71f
+2025-03-16 16:55:58.924 INFO  jdbc.resultset - 1. ResultSet.next() returned true
+2025-03-16 16:55:58.924 INFO  jdbc.resultset - 1. ResultSet.getLong(1) returned 690532
+2025-03-16 16:55:58.924 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.925 INFO  jdbc.resultset - 1. ResultSet.getString(2) returned 4~6
+2025-03-16 16:55:58.925 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.925 INFO  jdbc.resultset - 1. ResultSet.getString(3) returned 우
+2025-03-16 16:55:58.925 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.925 INFO  jdbc.resultset - 1. ResultSet.getInt(4) returned 4
+2025-03-16 16:55:58.925 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.925 INFO  jdbc.resultset - 1. ResultSet.getString(5) returned 짝
+2025-03-16 16:55:58.925 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.925 INFO  jdbc.resultsettable - 
+|-------|-----|----|-------|----|
+|rounds |army |lor |number |ooe |
+|-------|-----|----|-------|----|
+|690532 |4~6  |우   |4      |짝   |
+|-------|-----|----|-------|----|
+
+2025-03-16 16:55:58.925 INFO  jdbc.resultset - 1. ResultSet.next() returned false
+2025-03-16 16:55:58.925 INFO  jdbc.audit - 1. PreparedStatement.isClosed() returned false
+2025-03-16 16:55:58.925 INFO  jdbc.resultset - 1. ResultSet.close() returned void
+2025-03-16 16:55:58.925 INFO  jdbc.audit - 1. PreparedStatement.getMaxRows() returned 0
+2025-03-16 16:55:58.925 INFO  jdbc.audit - 1. PreparedStatement.getQueryTimeout() returned 0
+2025-03-16 16:55:58.925 INFO  jdbc.audit - 1. PreparedStatement.close() returned 
+2025-03-16 16:55:58.925 INFO  jdbc.audit - 1. Connection.commit() returned 
+2025-03-16 16:55:58.925 INFO  jdbc.audit - 1. Connection.setAutoCommit(true) returned 
+2025-03-16 16:55:58.926 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:55:58.926 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:55:58.926 INFO  jdbc.audit - 1. Connection.getAutoCommit() returned true
+2025-03-16 16:55:58.926 INFO  jdbc.audit - 1. Connection.setAutoCommit(false) returned 
+2025-03-16 16:55:58.927 INFO  jdbc.audit - 1. PreparedStatement.new PreparedStatement returned 
+2025-03-16 16:55:58.927 INFO  jdbc.audit - 1. Connection.prepareStatement(select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit ?,?, 1003, 1007) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@10175805
+2025-03-16 16:55:58.927 INFO  jdbc.audit - 1. PreparedStatement.setInt(1, 0) returned 
+2025-03-16 16:55:58.927 INFO  jdbc.audit - 1. PreparedStatement.setInt(2, 1000) returned 
+2025-03-16 16:55:58.927 INFO  jdbc.sqlonly - select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit 0,1000
+
+2025-03-16 16:55:58.927 INFO  jdbc.sqltiming - select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit 0,1000
+ {executed in 0 msec}
+2025-03-16 16:55:58.927 INFO  jdbc.resultset - 1. ResultSet.new ResultSet returned 
+2025-03-16 16:55:58.927 INFO  jdbc.audit - 1. PreparedStatement.executeQuery() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@1ebedc23
+2025-03-16 16:55:58.927 INFO  jdbc.resultset - 1. ResultSet.next() returned true
+2025-03-16 16:55:58.927 INFO  jdbc.resultset - 1. ResultSet.getLong(1) returned 690532
+2025-03-16 16:55:58.927 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.927 INFO  jdbc.resultset - 1. ResultSet.getString(2) returned 4~6
+2025-03-16 16:55:58.927 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.927 INFO  jdbc.resultset - 1. ResultSet.getString(3) returned 우
+2025-03-16 16:55:58.927 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.927 INFO  jdbc.resultset - 1. ResultSet.getInt(4) returned 4
+2025-03-16 16:55:58.927 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.927 INFO  jdbc.resultset - 1. ResultSet.getString(5) returned 짝
+2025-03-16 16:55:58.927 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.927 INFO  jdbc.resultsettable - 
+|-------|-----|----|-------|----|
+|rounds |army |lor |number |ooe |
+|-------|-----|----|-------|----|
+|690532 |4~6  |우   |4      |짝   |
+|-------|-----|----|-------|----|
+
+2025-03-16 16:55:58.928 INFO  jdbc.resultset - 1. ResultSet.next() returned false
+2025-03-16 16:55:58.928 INFO  jdbc.audit - 1. PreparedStatement.isClosed() returned false
+2025-03-16 16:55:58.928 INFO  jdbc.resultset - 1. ResultSet.close() returned void
+2025-03-16 16:55:58.928 INFO  jdbc.audit - 1. PreparedStatement.getMaxRows() returned 0
+2025-03-16 16:55:58.928 INFO  jdbc.audit - 1. PreparedStatement.getQueryTimeout() returned 0
+2025-03-16 16:55:58.928 INFO  jdbc.audit - 1. PreparedStatement.close() returned 
+2025-03-16 16:55:58.928 INFO  jdbc.audit - 1. Connection.commit() returned 
+2025-03-16 16:55:58.928 INFO  jdbc.audit - 1. Connection.setAutoCommit(true) returned 
+2025-03-16 16:55:58.928 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:55:58.928 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:55:58.928 INFO  jdbc.audit - 1. Connection.getAutoCommit() returned true
+2025-03-16 16:55:58.929 INFO  jdbc.audit - 1. Connection.setAutoCommit(false) returned 
+2025-03-16 16:55:58.929 INFO  jdbc.audit - 1. PreparedStatement.new PreparedStatement returned 
+2025-03-16 16:55:58.929 INFO  jdbc.audit - 1. Connection.prepareStatement(select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit ?,?, 1003, 1007) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@2bb250cc
+2025-03-16 16:55:58.929 INFO  jdbc.audit - 1. PreparedStatement.setInt(1, 0) returned 
+2025-03-16 16:55:58.929 INFO  jdbc.audit - 1. PreparedStatement.setInt(2, 1000) returned 
+2025-03-16 16:55:58.929 INFO  jdbc.sqlonly - select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit 0,1000
+
+2025-03-16 16:55:58.929 INFO  jdbc.sqltiming - select t1_0.rounds,t1_0.army,t1_0.lor,t1_0.number,t1_0.ooe from tree t1_0 order by t1_0.rounds desc limit 0,1000
+ {executed in 0 msec}
+2025-03-16 16:55:58.929 INFO  jdbc.resultset - 1. ResultSet.new ResultSet returned 
+2025-03-16 16:55:58.929 INFO  jdbc.audit - 1. PreparedStatement.executeQuery() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@79c10607
+2025-03-16 16:55:58.929 INFO  jdbc.resultset - 1. ResultSet.next() returned true
+2025-03-16 16:55:58.929 INFO  jdbc.resultset - 1. ResultSet.getLong(1) returned 690532
+2025-03-16 16:55:58.929 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.929 INFO  jdbc.resultset - 1. ResultSet.getString(2) returned 4~6
+2025-03-16 16:55:58.929 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.929 INFO  jdbc.resultset - 1. ResultSet.getString(3) returned 우
+2025-03-16 16:55:58.929 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.929 INFO  jdbc.resultset - 1. ResultSet.getInt(4) returned 4
+2025-03-16 16:55:58.930 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.930 INFO  jdbc.resultset - 1. ResultSet.getString(5) returned 짝
+2025-03-16 16:55:58.930 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:55:58.930 INFO  jdbc.resultsettable - 
+|-------|-----|----|-------|----|
+|rounds |army |lor |number |ooe |
+|-------|-----|----|-------|----|
+|690532 |4~6  |우   |4      |짝   |
+|-------|-----|----|-------|----|
+
+2025-03-16 16:55:58.930 INFO  jdbc.resultset - 1. ResultSet.next() returned false
+2025-03-16 16:55:58.930 INFO  jdbc.audit - 1. PreparedStatement.isClosed() returned false
+2025-03-16 16:55:58.930 INFO  jdbc.resultset - 1. ResultSet.close() returned void
+2025-03-16 16:55:58.930 INFO  jdbc.audit - 1. PreparedStatement.getMaxRows() returned 0
+2025-03-16 16:55:58.930 INFO  jdbc.audit - 1. PreparedStatement.getQueryTimeout() returned 0
+2025-03-16 16:55:58.930 INFO  jdbc.audit - 1. PreparedStatement.close() returned 
+2025-03-16 16:55:58.930 INFO  jdbc.audit - 1. Connection.commit() returned 
+2025-03-16 16:55:58.930 INFO  jdbc.audit - 1. Connection.setAutoCommit(true) returned 
+2025-03-16 16:55:58.930 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:55:58.930 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:56:00.115 INFO  jdbc.audit - 1. Connection.isValid(5) returned true
+2025-03-16 16:56:00.115 INFO  jdbc.audit - 1. Connection.getAutoCommit() returned true
+2025-03-16 16:56:00.116 INFO  jdbc.audit - 1. Connection.setAutoCommit(false) returned 
+2025-03-16 16:56:00.116 INFO  jdbc.audit - 1. PreparedStatement.new PreparedStatement returned 
+2025-03-16 16:56:00.116 INFO  jdbc.audit - 1. Connection.prepareStatement(select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 where t1_0.rounds=?, 1003, 1007) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@10855e05
+2025-03-16 16:56:00.116 INFO  jdbc.audit - 1. PreparedStatement.setLong(1, 3023516) returned 
+2025-03-16 16:56:00.116 INFO  jdbc.sqlonly - select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 where t1_0.rounds=3023516
+
+2025-03-16 16:56:00.117 INFO  jdbc.sqltiming - select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 where t1_0.rounds=3023516
+ {executed in 0 msec}
+2025-03-16 16:56:00.117 INFO  jdbc.resultset - 1. ResultSet.new ResultSet returned 
+2025-03-16 16:56:00.117 INFO  jdbc.audit - 1. PreparedStatement.executeQuery() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@4ec680e9
+2025-03-16 16:56:00.117 INFO  jdbc.resultsettable - 
+|-------|-------|----|
+|rounds |degree |ooe |
+|-------|-------|----|
+|-------|-------|----|
+
+2025-03-16 16:56:00.117 INFO  jdbc.resultset - 1. ResultSet.next() returned false
+2025-03-16 16:56:00.117 INFO  jdbc.audit - 1. PreparedStatement.isClosed() returned false
+2025-03-16 16:56:00.117 INFO  jdbc.resultset - 1. ResultSet.close() returned void
+2025-03-16 16:56:00.117 INFO  jdbc.audit - 1. PreparedStatement.getMaxRows() returned 0
+2025-03-16 16:56:00.117 INFO  jdbc.audit - 1. PreparedStatement.getQueryTimeout() returned 0
+2025-03-16 16:56:00.117 INFO  jdbc.audit - 1. PreparedStatement.close() returned 
+2025-03-16 16:56:00.117 INFO  jdbc.audit - 1. PreparedStatement.new PreparedStatement returned 
+2025-03-16 16:56:00.117 INFO  jdbc.audit - 1. Connection.prepareStatement(insert into thermo (degree,ooe,rounds) values (?,?,?)) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@23193482
+2025-03-16 16:56:00.117 INFO  jdbc.audit - 1. PreparedStatement.setInt(1, 61) returned 
+2025-03-16 16:56:00.117 INFO  jdbc.audit - 1. PreparedStatement.setString(2, "홀") returned 
+2025-03-16 16:56:00.117 INFO  jdbc.audit - 1. PreparedStatement.setLong(3, 3023516) returned 
+2025-03-16 16:56:00.118 INFO  jdbc.sqlonly - insert into thermo (degree,ooe,rounds) values (61,'홀',3023516)
+
+2025-03-16 16:56:00.118 INFO  jdbc.sqltiming - insert into thermo (degree,ooe,rounds) values (61,'홀',3023516)
+ {executed in 0 msec}
+2025-03-16 16:56:00.118 INFO  jdbc.audit - 1. PreparedStatement.executeUpdate() returned 1
+2025-03-16 16:56:00.118 INFO  jdbc.audit - 1. PreparedStatement.getMaxRows() returned 0
+2025-03-16 16:56:00.118 INFO  jdbc.audit - 1. PreparedStatement.getQueryTimeout() returned 0
+2025-03-16 16:56:00.118 INFO  jdbc.audit - 1. PreparedStatement.close() returned 
+2025-03-16 16:56:00.119 INFO  jdbc.audit - 1. Connection.commit() returned 
+2025-03-16 16:56:00.119 INFO  jdbc.audit - 1. Connection.setAutoCommit(true) returned 
+2025-03-16 16:56:00.119 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:56:00.119 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:56:00.120 INFO  jdbc.audit - 1. Connection.setReadOnly(true) returned 
+2025-03-16 16:56:00.120 INFO  jdbc.audit - 1. Connection.getAutoCommit() returned true
+2025-03-16 16:56:00.120 INFO  jdbc.audit - 1. Connection.setAutoCommit(false) returned 
+2025-03-16 16:56:00.121 INFO  jdbc.audit - 1. PreparedStatement.new PreparedStatement returned 
+2025-03-16 16:56:00.121 INFO  jdbc.audit - 1. Connection.prepareStatement(select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 order by t1_0.rounds desc limit ?,?, 1003, 1007) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@11274b51
+2025-03-16 16:56:00.121 INFO  jdbc.audit - 1. PreparedStatement.setInt(1, 0) returned 
+2025-03-16 16:56:00.121 INFO  jdbc.audit - 1. PreparedStatement.setInt(2, 20) returned 
+2025-03-16 16:56:00.121 INFO  jdbc.sqlonly - select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 order by t1_0.rounds desc limit 0,20
+
+2025-03-16 16:56:00.122 INFO  jdbc.sqltiming - select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 order by t1_0.rounds desc limit 0,20
+ {executed in 1 msec}
+2025-03-16 16:56:00.122 INFO  jdbc.resultset - 1. ResultSet.new ResultSet returned 
+2025-03-16 16:56:00.122 INFO  jdbc.audit - 1. PreparedStatement.executeQuery() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@45e70eb0
+2025-03-16 16:56:00.122 INFO  jdbc.resultset - 1. ResultSet.next() returned true
+2025-03-16 16:56:00.122 INFO  jdbc.resultset - 1. ResultSet.getLong(1) returned 3023516
+2025-03-16 16:56:00.122 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:00.122 INFO  jdbc.resultset - 1. ResultSet.getInt(2) returned 61
+2025-03-16 16:56:00.122 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:00.122 INFO  jdbc.resultset - 1. ResultSet.getString(3) returned 홀
+2025-03-16 16:56:00.122 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:00.122 INFO  jdbc.resultset - 1. ResultSet.next() returned true
+2025-03-16 16:56:00.122 INFO  jdbc.resultset - 1. ResultSet.getLong(1) returned 3023515
+2025-03-16 16:56:00.122 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:00.122 INFO  jdbc.resultset - 1. ResultSet.getInt(2) returned 69
+2025-03-16 16:56:00.122 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:00.122 INFO  jdbc.resultset - 1. ResultSet.getString(3) returned 홀
+2025-03-16 16:56:00.122 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:00.122 INFO  jdbc.resultsettable - 
+|--------|-------|----|
+|rounds  |degree |ooe |
+|--------|-------|----|
+|3023516 |61     |홀   |
+|3023515 |69     |홀   |
+|--------|-------|----|
+
+2025-03-16 16:56:00.122 INFO  jdbc.resultset - 1. ResultSet.next() returned false
+2025-03-16 16:56:00.122 INFO  jdbc.audit - 1. PreparedStatement.isClosed() returned false
+2025-03-16 16:56:00.122 INFO  jdbc.resultset - 1. ResultSet.close() returned void
+2025-03-16 16:56:00.122 INFO  jdbc.audit - 1. PreparedStatement.getMaxRows() returned 0
+2025-03-16 16:56:00.122 INFO  jdbc.audit - 1. PreparedStatement.getQueryTimeout() returned 0
+2025-03-16 16:56:00.123 INFO  jdbc.audit - 1. PreparedStatement.close() returned 
+2025-03-16 16:56:00.123 INFO  jdbc.audit - 1. Connection.commit() returned 
+2025-03-16 16:56:00.123 INFO  jdbc.audit - 1. Connection.setAutoCommit(true) returned 
+2025-03-16 16:56:00.123 INFO  jdbc.audit - 1. Connection.setReadOnly(false) returned 
+2025-03-16 16:56:00.123 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:56:00.123 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:56:03.164 INFO  jdbc.audit - 1. Connection.isValid(5) returned true
+2025-03-16 16:56:03.164 INFO  jdbc.audit - 1. Connection.getAutoCommit() returned true
+2025-03-16 16:56:03.164 INFO  jdbc.audit - 1. Connection.setAutoCommit(false) returned 
+2025-03-16 16:56:03.165 INFO  jdbc.audit - 1. PreparedStatement.new PreparedStatement returned 
+2025-03-16 16:56:03.165 INFO  jdbc.audit - 1. Connection.prepareStatement(select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 order by t1_0.rounds desc limit ?,?, 1003, 1007) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@256427e4
+2025-03-16 16:56:03.165 INFO  jdbc.audit - 1. PreparedStatement.setInt(1, 0) returned 
+2025-03-16 16:56:03.165 INFO  jdbc.audit - 1. PreparedStatement.setInt(2, 2000) returned 
+2025-03-16 16:56:03.165 INFO  jdbc.sqlonly - select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 order by t1_0.rounds desc limit 0,2000
+
+2025-03-16 16:56:03.166 INFO  jdbc.sqltiming - select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 order by t1_0.rounds desc limit 0,2000
+ {executed in 1 msec}
+2025-03-16 16:56:03.166 INFO  jdbc.resultset - 1. ResultSet.new ResultSet returned 
+2025-03-16 16:56:03.166 INFO  jdbc.audit - 1. PreparedStatement.executeQuery() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@13dedf7e
+2025-03-16 16:56:03.166 INFO  jdbc.resultset - 1. ResultSet.next() returned true
+2025-03-16 16:56:03.166 INFO  jdbc.resultset - 1. ResultSet.getLong(1) returned 3023516
+2025-03-16 16:56:03.166 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.166 INFO  jdbc.resultset - 1. ResultSet.getInt(2) returned 61
+2025-03-16 16:56:03.166 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.166 INFO  jdbc.resultset - 1. ResultSet.getString(3) returned 홀
+2025-03-16 16:56:03.166 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.166 INFO  jdbc.resultset - 1. ResultSet.next() returned true
+2025-03-16 16:56:03.166 INFO  jdbc.resultset - 1. ResultSet.getLong(1) returned 3023515
+2025-03-16 16:56:03.166 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.166 INFO  jdbc.resultset - 1. ResultSet.getInt(2) returned 69
+2025-03-16 16:56:03.166 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.166 INFO  jdbc.resultset - 1. ResultSet.getString(3) returned 홀
+2025-03-16 16:56:03.166 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.166 INFO  jdbc.resultsettable - 
+|--------|-------|----|
+|rounds  |degree |ooe |
+|--------|-------|----|
+|3023516 |61     |홀   |
+|3023515 |69     |홀   |
+|--------|-------|----|
+
+2025-03-16 16:56:03.166 INFO  jdbc.resultset - 1. ResultSet.next() returned false
+2025-03-16 16:56:03.166 INFO  jdbc.audit - 1. PreparedStatement.isClosed() returned false
+2025-03-16 16:56:03.166 INFO  jdbc.resultset - 1. ResultSet.close() returned void
+2025-03-16 16:56:03.166 INFO  jdbc.audit - 1. PreparedStatement.getMaxRows() returned 0
+2025-03-16 16:56:03.166 INFO  jdbc.audit - 1. PreparedStatement.getQueryTimeout() returned 0
+2025-03-16 16:56:03.166 INFO  jdbc.audit - 1. PreparedStatement.close() returned 
+2025-03-16 16:56:03.167 INFO  jdbc.audit - 1. Connection.commit() returned 
+2025-03-16 16:56:03.167 INFO  jdbc.audit - 1. Connection.setAutoCommit(true) returned 
+2025-03-16 16:56:03.168 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:56:03.168 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:56:03.168 INFO  jdbc.audit - 1. Connection.getAutoCommit() returned true
+2025-03-16 16:56:03.168 INFO  jdbc.audit - 1. Connection.setAutoCommit(false) returned 
+2025-03-16 16:56:03.169 INFO  jdbc.audit - 1. PreparedStatement.new PreparedStatement returned 
+2025-03-16 16:56:03.169 INFO  jdbc.audit - 1. Connection.prepareStatement(select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 order by t1_0.rounds desc limit ?,?, 1003, 1007) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@5d09bfb8
+2025-03-16 16:56:03.169 INFO  jdbc.audit - 1. PreparedStatement.setInt(1, 0) returned 
+2025-03-16 16:56:03.169 INFO  jdbc.audit - 1. PreparedStatement.setInt(2, 2000) returned 
+2025-03-16 16:56:03.169 INFO  jdbc.sqlonly - select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 order by t1_0.rounds desc limit 0,2000
+
+2025-03-16 16:56:03.169 INFO  jdbc.sqltiming - select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 order by t1_0.rounds desc limit 0,2000
+ {executed in 0 msec}
+2025-03-16 16:56:03.169 INFO  jdbc.resultset - 1. ResultSet.new ResultSet returned 
+2025-03-16 16:56:03.169 INFO  jdbc.audit - 1. PreparedStatement.executeQuery() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@4fdb93b1
+2025-03-16 16:56:03.169 INFO  jdbc.resultset - 1. ResultSet.next() returned true
+2025-03-16 16:56:03.169 INFO  jdbc.resultset - 1. ResultSet.getLong(1) returned 3023516
+2025-03-16 16:56:03.169 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.169 INFO  jdbc.resultset - 1. ResultSet.getInt(2) returned 61
+2025-03-16 16:56:03.169 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.169 INFO  jdbc.resultset - 1. ResultSet.getString(3) returned 홀
+2025-03-16 16:56:03.169 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.169 INFO  jdbc.resultset - 1. ResultSet.next() returned true
+2025-03-16 16:56:03.169 INFO  jdbc.resultset - 1. ResultSet.getLong(1) returned 3023515
+2025-03-16 16:56:03.169 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.169 INFO  jdbc.resultset - 1. ResultSet.getInt(2) returned 69
+2025-03-16 16:56:03.169 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.169 INFO  jdbc.resultset - 1. ResultSet.getString(3) returned 홀
+2025-03-16 16:56:03.169 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.169 INFO  jdbc.resultsettable - 
+|--------|-------|----|
+|rounds  |degree |ooe |
+|--------|-------|----|
+|3023516 |61     |홀   |
+|3023515 |69     |홀   |
+|--------|-------|----|
+
+2025-03-16 16:56:03.169 INFO  jdbc.resultset - 1. ResultSet.next() returned false
+2025-03-16 16:56:03.170 INFO  jdbc.audit - 1. PreparedStatement.isClosed() returned false
+2025-03-16 16:56:03.170 INFO  jdbc.resultset - 1. ResultSet.close() returned void
+2025-03-16 16:56:03.170 INFO  jdbc.audit - 1. PreparedStatement.getMaxRows() returned 0
+2025-03-16 16:56:03.170 INFO  jdbc.audit - 1. PreparedStatement.getQueryTimeout() returned 0
+2025-03-16 16:56:03.170 INFO  jdbc.audit - 1. PreparedStatement.close() returned 
+2025-03-16 16:56:03.170 INFO  jdbc.audit - 1. Connection.commit() returned 
+2025-03-16 16:56:03.170 INFO  jdbc.audit - 1. Connection.setAutoCommit(true) returned 
+2025-03-16 16:56:03.170 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:56:03.170 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:56:03.170 INFO  jdbc.audit - 1. Connection.getAutoCommit() returned true
+2025-03-16 16:56:03.171 INFO  jdbc.audit - 1. Connection.setAutoCommit(false) returned 
+2025-03-16 16:56:03.172 INFO  jdbc.audit - 1. PreparedStatement.new PreparedStatement returned 
+2025-03-16 16:56:03.172 INFO  jdbc.audit - 1. Connection.prepareStatement(select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 order by t1_0.rounds desc limit ?,?, 1003, 1007) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@4aea8f08
+2025-03-16 16:56:03.172 INFO  jdbc.audit - 1. PreparedStatement.setInt(1, 0) returned 
+2025-03-16 16:56:03.172 INFO  jdbc.audit - 1. PreparedStatement.setInt(2, 2000) returned 
+2025-03-16 16:56:03.172 INFO  jdbc.sqlonly - select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 order by t1_0.rounds desc limit 0,2000
+
+2025-03-16 16:56:03.172 INFO  jdbc.sqltiming - select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 order by t1_0.rounds desc limit 0,2000
+ {executed in 0 msec}
+2025-03-16 16:56:03.172 INFO  jdbc.resultset - 1. ResultSet.new ResultSet returned 
+2025-03-16 16:56:03.172 INFO  jdbc.audit - 1. PreparedStatement.executeQuery() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@7cdb61f9
+2025-03-16 16:56:03.172 INFO  jdbc.resultset - 1. ResultSet.next() returned true
+2025-03-16 16:56:03.172 INFO  jdbc.resultset - 1. ResultSet.getLong(1) returned 3023516
+2025-03-16 16:56:03.172 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.173 INFO  jdbc.resultset - 1. ResultSet.getInt(2) returned 61
+2025-03-16 16:56:03.173 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.173 INFO  jdbc.resultset - 1. ResultSet.getString(3) returned 홀
+2025-03-16 16:56:03.173 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.173 INFO  jdbc.resultset - 1. ResultSet.next() returned true
+2025-03-16 16:56:03.173 INFO  jdbc.resultset - 1. ResultSet.getLong(1) returned 3023515
+2025-03-16 16:56:03.173 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.173 INFO  jdbc.resultset - 1. ResultSet.getInt(2) returned 69
+2025-03-16 16:56:03.173 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.173 INFO  jdbc.resultset - 1. ResultSet.getString(3) returned 홀
+2025-03-16 16:56:03.173 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.173 INFO  jdbc.resultsettable - 
+|--------|-------|----|
+|rounds  |degree |ooe |
+|--------|-------|----|
+|3023516 |61     |홀   |
+|3023515 |69     |홀   |
+|--------|-------|----|
+
+2025-03-16 16:56:03.173 INFO  jdbc.resultset - 1. ResultSet.next() returned false
+2025-03-16 16:56:03.173 INFO  jdbc.audit - 1. PreparedStatement.isClosed() returned false
+2025-03-16 16:56:03.173 INFO  jdbc.resultset - 1. ResultSet.close() returned void
+2025-03-16 16:56:03.173 INFO  jdbc.audit - 1. PreparedStatement.getMaxRows() returned 0
+2025-03-16 16:56:03.173 INFO  jdbc.audit - 1. PreparedStatement.getQueryTimeout() returned 0
+2025-03-16 16:56:03.173 INFO  jdbc.audit - 1. PreparedStatement.close() returned 
+2025-03-16 16:56:03.173 INFO  jdbc.audit - 1. Connection.commit() returned 
+2025-03-16 16:56:03.173 INFO  jdbc.audit - 1. Connection.setAutoCommit(true) returned 
+2025-03-16 16:56:03.173 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:56:03.173 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:56:03.174 INFO  jdbc.audit - 1. Connection.getAutoCommit() returned true
+2025-03-16 16:56:03.174 INFO  jdbc.audit - 1. Connection.setAutoCommit(false) returned 
+2025-03-16 16:56:03.174 INFO  jdbc.audit - 1. PreparedStatement.new PreparedStatement returned 
+2025-03-16 16:56:03.174 INFO  jdbc.audit - 1. Connection.prepareStatement(select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 order by t1_0.rounds desc limit ?,?, 1003, 1007) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@1c495083
+2025-03-16 16:56:03.174 INFO  jdbc.audit - 1. PreparedStatement.setInt(1, 0) returned 
+2025-03-16 16:56:03.174 INFO  jdbc.audit - 1. PreparedStatement.setInt(2, 2000) returned 
+2025-03-16 16:56:03.174 INFO  jdbc.sqlonly - select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 order by t1_0.rounds desc limit 0,2000
+
+2025-03-16 16:56:03.174 INFO  jdbc.sqltiming - select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 order by t1_0.rounds desc limit 0,2000
+ {executed in 0 msec}
+2025-03-16 16:56:03.174 INFO  jdbc.resultset - 1. ResultSet.new ResultSet returned 
+2025-03-16 16:56:03.174 INFO  jdbc.audit - 1. PreparedStatement.executeQuery() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@4af77988
+2025-03-16 16:56:03.174 INFO  jdbc.resultset - 1. ResultSet.next() returned true
+2025-03-16 16:56:03.174 INFO  jdbc.resultset - 1. ResultSet.getLong(1) returned 3023516
+2025-03-16 16:56:03.174 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.174 INFO  jdbc.resultset - 1. ResultSet.getInt(2) returned 61
+2025-03-16 16:56:03.174 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.174 INFO  jdbc.resultset - 1. ResultSet.getString(3) returned 홀
+2025-03-16 16:56:03.174 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.174 INFO  jdbc.resultset - 1. ResultSet.next() returned true
+2025-03-16 16:56:03.174 INFO  jdbc.resultset - 1. ResultSet.getLong(1) returned 3023515
+2025-03-16 16:56:03.174 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.174 INFO  jdbc.resultset - 1. ResultSet.getInt(2) returned 69
+2025-03-16 16:56:03.174 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.174 INFO  jdbc.resultset - 1. ResultSet.getString(3) returned 홀
+2025-03-16 16:56:03.174 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.174 INFO  jdbc.resultsettable - 
+|--------|-------|----|
+|rounds  |degree |ooe |
+|--------|-------|----|
+|3023516 |61     |홀   |
+|3023515 |69     |홀   |
+|--------|-------|----|
+
+2025-03-16 16:56:03.175 INFO  jdbc.resultset - 1. ResultSet.next() returned false
+2025-03-16 16:56:03.175 INFO  jdbc.audit - 1. PreparedStatement.isClosed() returned false
+2025-03-16 16:56:03.175 INFO  jdbc.resultset - 1. ResultSet.close() returned void
+2025-03-16 16:56:03.175 INFO  jdbc.audit - 1. PreparedStatement.getMaxRows() returned 0
+2025-03-16 16:56:03.175 INFO  jdbc.audit - 1. PreparedStatement.getQueryTimeout() returned 0
+2025-03-16 16:56:03.175 INFO  jdbc.audit - 1. PreparedStatement.close() returned 
+2025-03-16 16:56:03.175 INFO  jdbc.audit - 1. Connection.commit() returned 
+2025-03-16 16:56:03.176 INFO  jdbc.audit - 1. Connection.setAutoCommit(true) returned 
+2025-03-16 16:56:03.176 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:56:03.176 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:56:03.176 INFO  jdbc.audit - 1. Connection.getAutoCommit() returned true
+2025-03-16 16:56:03.176 INFO  jdbc.audit - 1. Connection.setAutoCommit(false) returned 
+2025-03-16 16:56:03.176 INFO  jdbc.audit - 1. PreparedStatement.new PreparedStatement returned 
+2025-03-16 16:56:03.176 INFO  jdbc.audit - 1. Connection.prepareStatement(select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 order by t1_0.rounds desc limit ?,?, 1003, 1007) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@1a30b861
+2025-03-16 16:56:03.176 INFO  jdbc.audit - 1. PreparedStatement.setInt(1, 0) returned 
+2025-03-16 16:56:03.177 INFO  jdbc.audit - 1. PreparedStatement.setInt(2, 2000) returned 
+2025-03-16 16:56:03.177 INFO  jdbc.sqlonly - select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 order by t1_0.rounds desc limit 0,2000
+
+2025-03-16 16:56:03.177 INFO  jdbc.sqltiming - select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 order by t1_0.rounds desc limit 0,2000
+ {executed in 0 msec}
+2025-03-16 16:56:03.177 INFO  jdbc.resultset - 1. ResultSet.new ResultSet returned 
+2025-03-16 16:56:03.177 INFO  jdbc.audit - 1. PreparedStatement.executeQuery() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@b32d5ec
+2025-03-16 16:56:03.177 INFO  jdbc.resultset - 1. ResultSet.next() returned true
+2025-03-16 16:56:03.177 INFO  jdbc.resultset - 1. ResultSet.getLong(1) returned 3023516
+2025-03-16 16:56:03.177 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.177 INFO  jdbc.resultset - 1. ResultSet.getInt(2) returned 61
+2025-03-16 16:56:03.177 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.177 INFO  jdbc.resultset - 1. ResultSet.getString(3) returned 홀
+2025-03-16 16:56:03.177 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.177 INFO  jdbc.resultset - 1. ResultSet.next() returned true
+2025-03-16 16:56:03.177 INFO  jdbc.resultset - 1. ResultSet.getLong(1) returned 3023515
+2025-03-16 16:56:03.177 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.177 INFO  jdbc.resultset - 1. ResultSet.getInt(2) returned 69
+2025-03-16 16:56:03.177 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.177 INFO  jdbc.resultset - 1. ResultSet.getString(3) returned 홀
+2025-03-16 16:56:03.177 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.177 INFO  jdbc.resultsettable - 
+|--------|-------|----|
+|rounds  |degree |ooe |
+|--------|-------|----|
+|3023516 |61     |홀   |
+|3023515 |69     |홀   |
+|--------|-------|----|
+
+2025-03-16 16:56:03.177 INFO  jdbc.resultset - 1. ResultSet.next() returned false
+2025-03-16 16:56:03.177 INFO  jdbc.audit - 1. PreparedStatement.isClosed() returned false
+2025-03-16 16:56:03.177 INFO  jdbc.resultset - 1. ResultSet.close() returned void
+2025-03-16 16:56:03.177 INFO  jdbc.audit - 1. PreparedStatement.getMaxRows() returned 0
+2025-03-16 16:56:03.177 INFO  jdbc.audit - 1. PreparedStatement.getQueryTimeout() returned 0
+2025-03-16 16:56:03.177 INFO  jdbc.audit - 1. PreparedStatement.close() returned 
+2025-03-16 16:56:03.178 INFO  jdbc.audit - 1. Connection.commit() returned 
+2025-03-16 16:56:03.178 INFO  jdbc.audit - 1. Connection.setAutoCommit(true) returned 
+2025-03-16 16:56:03.178 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:56:03.178 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:56:03.178 INFO  jdbc.audit - 1. Connection.getAutoCommit() returned true
+2025-03-16 16:56:03.178 INFO  jdbc.audit - 1. Connection.setAutoCommit(false) returned 
+2025-03-16 16:56:03.179 INFO  jdbc.audit - 1. PreparedStatement.new PreparedStatement returned 
+2025-03-16 16:56:03.179 INFO  jdbc.audit - 1. Connection.prepareStatement(select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 order by t1_0.rounds desc limit ?,?, 1003, 1007) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@1a6ea652
+2025-03-16 16:56:03.179 INFO  jdbc.audit - 1. PreparedStatement.setInt(1, 0) returned 
+2025-03-16 16:56:03.179 INFO  jdbc.audit - 1. PreparedStatement.setInt(2, 2000) returned 
+2025-03-16 16:56:03.179 INFO  jdbc.sqlonly - select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 order by t1_0.rounds desc limit 0,2000
+
+2025-03-16 16:56:03.179 INFO  jdbc.sqltiming - select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 order by t1_0.rounds desc limit 0,2000
+ {executed in 0 msec}
+2025-03-16 16:56:03.179 INFO  jdbc.resultset - 1. ResultSet.new ResultSet returned 
+2025-03-16 16:56:03.179 INFO  jdbc.audit - 1. PreparedStatement.executeQuery() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@7abc1676
+2025-03-16 16:56:03.179 INFO  jdbc.resultset - 1. ResultSet.next() returned true
+2025-03-16 16:56:03.179 INFO  jdbc.resultset - 1. ResultSet.getLong(1) returned 3023516
+2025-03-16 16:56:03.179 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.179 INFO  jdbc.resultset - 1. ResultSet.getInt(2) returned 61
+2025-03-16 16:56:03.179 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.179 INFO  jdbc.resultset - 1. ResultSet.getString(3) returned 홀
+2025-03-16 16:56:03.179 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.179 INFO  jdbc.resultset - 1. ResultSet.next() returned true
+2025-03-16 16:56:03.179 INFO  jdbc.resultset - 1. ResultSet.getLong(1) returned 3023515
+2025-03-16 16:56:03.179 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.179 INFO  jdbc.resultset - 1. ResultSet.getInt(2) returned 69
+2025-03-16 16:56:03.179 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.179 INFO  jdbc.resultset - 1. ResultSet.getString(3) returned 홀
+2025-03-16 16:56:03.179 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.179 INFO  jdbc.resultsettable - 
+|--------|-------|----|
+|rounds  |degree |ooe |
+|--------|-------|----|
+|3023516 |61     |홀   |
+|3023515 |69     |홀   |
+|--------|-------|----|
+
+2025-03-16 16:56:03.179 INFO  jdbc.resultset - 1. ResultSet.next() returned false
+2025-03-16 16:56:03.179 INFO  jdbc.audit - 1. PreparedStatement.isClosed() returned false
+2025-03-16 16:56:03.179 INFO  jdbc.resultset - 1. ResultSet.close() returned void
+2025-03-16 16:56:03.179 INFO  jdbc.audit - 1. PreparedStatement.getMaxRows() returned 0
+2025-03-16 16:56:03.179 INFO  jdbc.audit - 1. PreparedStatement.getQueryTimeout() returned 0
+2025-03-16 16:56:03.179 INFO  jdbc.audit - 1. PreparedStatement.close() returned 
+2025-03-16 16:56:03.179 INFO  jdbc.audit - 1. Connection.commit() returned 
+2025-03-16 16:56:03.179 INFO  jdbc.audit - 1. Connection.setAutoCommit(true) returned 
+2025-03-16 16:56:03.179 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:56:03.179 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:56:03.180 INFO  jdbc.audit - 1. Connection.getAutoCommit() returned true
+2025-03-16 16:56:03.180 INFO  jdbc.audit - 1. Connection.setAutoCommit(false) returned 
+2025-03-16 16:56:03.180 INFO  jdbc.audit - 1. PreparedStatement.new PreparedStatement returned 
+2025-03-16 16:56:03.180 INFO  jdbc.audit - 1. Connection.prepareStatement(select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 order by t1_0.rounds desc limit ?,?, 1003, 1007) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@48a995c
+2025-03-16 16:56:03.180 INFO  jdbc.audit - 1. PreparedStatement.setInt(1, 0) returned 
+2025-03-16 16:56:03.180 INFO  jdbc.audit - 1. PreparedStatement.setInt(2, 2000) returned 
+2025-03-16 16:56:03.180 INFO  jdbc.sqlonly - select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 order by t1_0.rounds desc limit 0,2000
+
+2025-03-16 16:56:03.180 INFO  jdbc.sqltiming - select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 order by t1_0.rounds desc limit 0,2000
+ {executed in 0 msec}
+2025-03-16 16:56:03.180 INFO  jdbc.resultset - 1. ResultSet.new ResultSet returned 
+2025-03-16 16:56:03.180 INFO  jdbc.audit - 1. PreparedStatement.executeQuery() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@151915bb
+2025-03-16 16:56:03.182 INFO  jdbc.resultset - 1. ResultSet.next() returned true
+2025-03-16 16:56:03.182 INFO  jdbc.resultset - 1. ResultSet.getLong(1) returned 3023516
+2025-03-16 16:56:03.182 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.182 INFO  jdbc.resultset - 1. ResultSet.getInt(2) returned 61
+2025-03-16 16:56:03.182 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.182 INFO  jdbc.resultset - 1. ResultSet.getString(3) returned 홀
+2025-03-16 16:56:03.182 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.182 INFO  jdbc.resultset - 1. ResultSet.next() returned true
+2025-03-16 16:56:03.182 INFO  jdbc.resultset - 1. ResultSet.getLong(1) returned 3023515
+2025-03-16 16:56:03.182 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.182 INFO  jdbc.resultset - 1. ResultSet.getInt(2) returned 69
+2025-03-16 16:56:03.182 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.182 INFO  jdbc.resultset - 1. ResultSet.getString(3) returned 홀
+2025-03-16 16:56:03.182 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.182 INFO  jdbc.resultsettable - 
+|--------|-------|----|
+|rounds  |degree |ooe |
+|--------|-------|----|
+|3023516 |61     |홀   |
+|3023515 |69     |홀   |
+|--------|-------|----|
+
+2025-03-16 16:56:03.182 INFO  jdbc.resultset - 1. ResultSet.next() returned false
+2025-03-16 16:56:03.182 INFO  jdbc.audit - 1. PreparedStatement.isClosed() returned false
+2025-03-16 16:56:03.182 INFO  jdbc.resultset - 1. ResultSet.close() returned void
+2025-03-16 16:56:03.182 INFO  jdbc.audit - 1. PreparedStatement.getMaxRows() returned 0
+2025-03-16 16:56:03.182 INFO  jdbc.audit - 1. PreparedStatement.getQueryTimeout() returned 0
+2025-03-16 16:56:03.182 INFO  jdbc.audit - 1. PreparedStatement.close() returned 
+2025-03-16 16:56:03.182 INFO  jdbc.audit - 1. Connection.commit() returned 
+2025-03-16 16:56:03.182 INFO  jdbc.audit - 1. Connection.setAutoCommit(true) returned 
+2025-03-16 16:56:03.182 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:56:03.183 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:56:03.183 INFO  jdbc.audit - 1. Connection.getAutoCommit() returned true
+2025-03-16 16:56:03.183 INFO  jdbc.audit - 1. Connection.setAutoCommit(false) returned 
+2025-03-16 16:56:03.183 INFO  jdbc.audit - 1. PreparedStatement.new PreparedStatement returned 
+2025-03-16 16:56:03.183 INFO  jdbc.audit - 1. Connection.prepareStatement(select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 order by t1_0.rounds desc limit ?,?, 1003, 1007) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@4484e657
+2025-03-16 16:56:03.183 INFO  jdbc.audit - 1. PreparedStatement.setInt(1, 0) returned 
+2025-03-16 16:56:03.183 INFO  jdbc.audit - 1. PreparedStatement.setInt(2, 2000) returned 
+2025-03-16 16:56:03.183 INFO  jdbc.sqlonly - select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 order by t1_0.rounds desc limit 0,2000
+
+2025-03-16 16:56:03.184 INFO  jdbc.sqltiming - select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 order by t1_0.rounds desc limit 0,2000
+ {executed in 1 msec}
+2025-03-16 16:56:03.184 INFO  jdbc.resultset - 1. ResultSet.new ResultSet returned 
+2025-03-16 16:56:03.184 INFO  jdbc.audit - 1. PreparedStatement.executeQuery() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@2cd64390
+2025-03-16 16:56:03.184 INFO  jdbc.resultset - 1. ResultSet.next() returned true
+2025-03-16 16:56:03.184 INFO  jdbc.resultset - 1. ResultSet.getLong(1) returned 3023516
+2025-03-16 16:56:03.184 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.184 INFO  jdbc.resultset - 1. ResultSet.getInt(2) returned 61
+2025-03-16 16:56:03.184 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.184 INFO  jdbc.resultset - 1. ResultSet.getString(3) returned 홀
+2025-03-16 16:56:03.184 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.184 INFO  jdbc.resultset - 1. ResultSet.next() returned true
+2025-03-16 16:56:03.184 INFO  jdbc.resultset - 1. ResultSet.getLong(1) returned 3023515
+2025-03-16 16:56:03.184 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.184 INFO  jdbc.resultset - 1. ResultSet.getInt(2) returned 69
+2025-03-16 16:56:03.184 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.184 INFO  jdbc.resultset - 1. ResultSet.getString(3) returned 홀
+2025-03-16 16:56:03.184 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.184 INFO  jdbc.resultsettable - 
+|--------|-------|----|
+|rounds  |degree |ooe |
+|--------|-------|----|
+|3023516 |61     |홀   |
+|3023515 |69     |홀   |
+|--------|-------|----|
+
+2025-03-16 16:56:03.184 INFO  jdbc.resultset - 1. ResultSet.next() returned false
+2025-03-16 16:56:03.184 INFO  jdbc.audit - 1. PreparedStatement.isClosed() returned false
+2025-03-16 16:56:03.184 INFO  jdbc.resultset - 1. ResultSet.close() returned void
+2025-03-16 16:56:03.184 INFO  jdbc.audit - 1. PreparedStatement.getMaxRows() returned 0
+2025-03-16 16:56:03.184 INFO  jdbc.audit - 1. PreparedStatement.getQueryTimeout() returned 0
+2025-03-16 16:56:03.184 INFO  jdbc.audit - 1. PreparedStatement.close() returned 
+2025-03-16 16:56:03.184 INFO  jdbc.audit - 1. Connection.commit() returned 
+2025-03-16 16:56:03.185 INFO  jdbc.audit - 1. Connection.setAutoCommit(true) returned 
+2025-03-16 16:56:03.185 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:56:03.185 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:56:03.185 INFO  jdbc.audit - 1. Connection.getAutoCommit() returned true
+2025-03-16 16:56:03.185 INFO  jdbc.audit - 1. Connection.setAutoCommit(false) returned 
+2025-03-16 16:56:03.185 INFO  jdbc.audit - 1. PreparedStatement.new PreparedStatement returned 
+2025-03-16 16:56:03.185 INFO  jdbc.audit - 1. Connection.prepareStatement(select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 order by t1_0.rounds desc limit ?,?, 1003, 1007) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@3a3aea0f
+2025-03-16 16:56:03.185 INFO  jdbc.audit - 1. PreparedStatement.setInt(1, 0) returned 
+2025-03-16 16:56:03.185 INFO  jdbc.audit - 1. PreparedStatement.setInt(2, 2000) returned 
+2025-03-16 16:56:03.185 INFO  jdbc.sqlonly - select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 order by t1_0.rounds desc limit 0,2000
+
+2025-03-16 16:56:03.186 INFO  jdbc.sqltiming - select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 order by t1_0.rounds desc limit 0,2000
+ {executed in 1 msec}
+2025-03-16 16:56:03.186 INFO  jdbc.resultset - 1. ResultSet.new ResultSet returned 
+2025-03-16 16:56:03.186 INFO  jdbc.audit - 1. PreparedStatement.executeQuery() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@38be77d2
+2025-03-16 16:56:03.186 INFO  jdbc.resultset - 1. ResultSet.next() returned true
+2025-03-16 16:56:03.186 INFO  jdbc.resultset - 1. ResultSet.getLong(1) returned 3023516
+2025-03-16 16:56:03.186 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.186 INFO  jdbc.resultset - 1. ResultSet.getInt(2) returned 61
+2025-03-16 16:56:03.186 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.186 INFO  jdbc.resultset - 1. ResultSet.getString(3) returned 홀
+2025-03-16 16:56:03.186 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.186 INFO  jdbc.resultset - 1. ResultSet.next() returned true
+2025-03-16 16:56:03.186 INFO  jdbc.resultset - 1. ResultSet.getLong(1) returned 3023515
+2025-03-16 16:56:03.186 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.186 INFO  jdbc.resultset - 1. ResultSet.getInt(2) returned 69
+2025-03-16 16:56:03.186 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.186 INFO  jdbc.resultset - 1. ResultSet.getString(3) returned 홀
+2025-03-16 16:56:03.186 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.186 INFO  jdbc.resultsettable - 
+|--------|-------|----|
+|rounds  |degree |ooe |
+|--------|-------|----|
+|3023516 |61     |홀   |
+|3023515 |69     |홀   |
+|--------|-------|----|
+
+2025-03-16 16:56:03.186 INFO  jdbc.resultset - 1. ResultSet.next() returned false
+2025-03-16 16:56:03.186 INFO  jdbc.audit - 1. PreparedStatement.isClosed() returned false
+2025-03-16 16:56:03.186 INFO  jdbc.resultset - 1. ResultSet.close() returned void
+2025-03-16 16:56:03.186 INFO  jdbc.audit - 1. PreparedStatement.getMaxRows() returned 0
+2025-03-16 16:56:03.186 INFO  jdbc.audit - 1. PreparedStatement.getQueryTimeout() returned 0
+2025-03-16 16:56:03.186 INFO  jdbc.audit - 1. PreparedStatement.close() returned 
+2025-03-16 16:56:03.187 INFO  jdbc.audit - 1. Connection.commit() returned 
+2025-03-16 16:56:03.187 INFO  jdbc.audit - 1. Connection.setAutoCommit(true) returned 
+2025-03-16 16:56:03.187 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:56:03.187 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:56:03.187 INFO  jdbc.audit - 1. Connection.getAutoCommit() returned true
+2025-03-16 16:56:03.187 INFO  jdbc.audit - 1. Connection.setAutoCommit(false) returned 
+2025-03-16 16:56:03.188 INFO  jdbc.audit - 1. PreparedStatement.new PreparedStatement returned 
+2025-03-16 16:56:03.188 INFO  jdbc.audit - 1. Connection.prepareStatement(select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 order by t1_0.rounds desc limit ?,?, 1003, 1007) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@2ce2d1bb
+2025-03-16 16:56:03.188 INFO  jdbc.audit - 1. PreparedStatement.setInt(1, 0) returned 
+2025-03-16 16:56:03.188 INFO  jdbc.audit - 1. PreparedStatement.setInt(2, 2000) returned 
+2025-03-16 16:56:03.188 INFO  jdbc.sqlonly - select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 order by t1_0.rounds desc limit 0,2000
+
+2025-03-16 16:56:03.188 INFO  jdbc.sqltiming - select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 order by t1_0.rounds desc limit 0,2000
+ {executed in 0 msec}
+2025-03-16 16:56:03.188 INFO  jdbc.resultset - 1. ResultSet.new ResultSet returned 
+2025-03-16 16:56:03.188 INFO  jdbc.audit - 1. PreparedStatement.executeQuery() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@bf6afba
+2025-03-16 16:56:03.188 INFO  jdbc.resultset - 1. ResultSet.next() returned true
+2025-03-16 16:56:03.188 INFO  jdbc.resultset - 1. ResultSet.getLong(1) returned 3023516
+2025-03-16 16:56:03.188 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.188 INFO  jdbc.resultset - 1. ResultSet.getInt(2) returned 61
+2025-03-16 16:56:03.188 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.188 INFO  jdbc.resultset - 1. ResultSet.getString(3) returned 홀
+2025-03-16 16:56:03.188 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.188 INFO  jdbc.resultset - 1. ResultSet.next() returned true
+2025-03-16 16:56:03.189 INFO  jdbc.resultset - 1. ResultSet.getLong(1) returned 3023515
+2025-03-16 16:56:03.189 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.189 INFO  jdbc.resultset - 1. ResultSet.getInt(2) returned 69
+2025-03-16 16:56:03.189 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.189 INFO  jdbc.resultset - 1. ResultSet.getString(3) returned 홀
+2025-03-16 16:56:03.189 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.189 INFO  jdbc.resultsettable - 
+|--------|-------|----|
+|rounds  |degree |ooe |
+|--------|-------|----|
+|3023516 |61     |홀   |
+|3023515 |69     |홀   |
+|--------|-------|----|
+
+2025-03-16 16:56:03.189 INFO  jdbc.resultset - 1. ResultSet.next() returned false
+2025-03-16 16:56:03.189 INFO  jdbc.audit - 1. PreparedStatement.isClosed() returned false
+2025-03-16 16:56:03.189 INFO  jdbc.resultset - 1. ResultSet.close() returned void
+2025-03-16 16:56:03.189 INFO  jdbc.audit - 1. PreparedStatement.getMaxRows() returned 0
+2025-03-16 16:56:03.189 INFO  jdbc.audit - 1. PreparedStatement.getQueryTimeout() returned 0
+2025-03-16 16:56:03.189 INFO  jdbc.audit - 1. PreparedStatement.close() returned 
+2025-03-16 16:56:03.190 INFO  jdbc.audit - 1. Connection.commit() returned 
+2025-03-16 16:56:03.190 INFO  jdbc.audit - 1. Connection.setAutoCommit(true) returned 
+2025-03-16 16:56:03.190 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:56:03.190 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:56:03.190 INFO  jdbc.audit - 1. Connection.getAutoCommit() returned true
+2025-03-16 16:56:03.190 INFO  jdbc.audit - 1. Connection.setAutoCommit(false) returned 
+2025-03-16 16:56:03.191 INFO  jdbc.audit - 1. PreparedStatement.new PreparedStatement returned 
+2025-03-16 16:56:03.191 INFO  jdbc.audit - 1. Connection.prepareStatement(select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 order by t1_0.rounds desc limit ?,?, 1003, 1007) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@122e648f
+2025-03-16 16:56:03.191 INFO  jdbc.audit - 1. PreparedStatement.setInt(1, 0) returned 
+2025-03-16 16:56:03.191 INFO  jdbc.audit - 1. PreparedStatement.setInt(2, 2000) returned 
+2025-03-16 16:56:03.191 INFO  jdbc.sqlonly - select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 order by t1_0.rounds desc limit 0,2000
+
+2025-03-16 16:56:03.191 INFO  jdbc.sqltiming - select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 order by t1_0.rounds desc limit 0,2000
+ {executed in 0 msec}
+2025-03-16 16:56:03.191 INFO  jdbc.resultset - 1. ResultSet.new ResultSet returned 
+2025-03-16 16:56:03.191 INFO  jdbc.audit - 1. PreparedStatement.executeQuery() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@198b9b9c
+2025-03-16 16:56:03.191 INFO  jdbc.resultset - 1. ResultSet.next() returned true
+2025-03-16 16:56:03.191 INFO  jdbc.resultset - 1. ResultSet.getLong(1) returned 3023516
+2025-03-16 16:56:03.191 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.191 INFO  jdbc.resultset - 1. ResultSet.getInt(2) returned 61
+2025-03-16 16:56:03.191 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.191 INFO  jdbc.resultset - 1. ResultSet.getString(3) returned 홀
+2025-03-16 16:56:03.191 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.192 INFO  jdbc.resultset - 1. ResultSet.next() returned true
+2025-03-16 16:56:03.192 INFO  jdbc.resultset - 1. ResultSet.getLong(1) returned 3023515
+2025-03-16 16:56:03.192 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.192 INFO  jdbc.resultset - 1. ResultSet.getInt(2) returned 69
+2025-03-16 16:56:03.192 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.192 INFO  jdbc.resultset - 1. ResultSet.getString(3) returned 홀
+2025-03-16 16:56:03.192 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.192 INFO  jdbc.resultsettable - 
+|--------|-------|----|
+|rounds  |degree |ooe |
+|--------|-------|----|
+|3023516 |61     |홀   |
+|3023515 |69     |홀   |
+|--------|-------|----|
+
+2025-03-16 16:56:03.192 INFO  jdbc.resultset - 1. ResultSet.next() returned false
+2025-03-16 16:56:03.192 INFO  jdbc.audit - 1. PreparedStatement.isClosed() returned false
+2025-03-16 16:56:03.192 INFO  jdbc.resultset - 1. ResultSet.close() returned void
+2025-03-16 16:56:03.192 INFO  jdbc.audit - 1. PreparedStatement.getMaxRows() returned 0
+2025-03-16 16:56:03.192 INFO  jdbc.audit - 1. PreparedStatement.getQueryTimeout() returned 0
+2025-03-16 16:56:03.192 INFO  jdbc.audit - 1. PreparedStatement.close() returned 
+2025-03-16 16:56:03.192 INFO  jdbc.audit - 1. Connection.commit() returned 
+2025-03-16 16:56:03.192 INFO  jdbc.audit - 1. Connection.setAutoCommit(true) returned 
+2025-03-16 16:56:03.192 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:56:03.192 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:56:03.192 INFO  jdbc.audit - 1. Connection.getAutoCommit() returned true
+2025-03-16 16:56:03.193 INFO  jdbc.audit - 1. Connection.setAutoCommit(false) returned 
+2025-03-16 16:56:03.193 INFO  jdbc.audit - 1. PreparedStatement.new PreparedStatement returned 
+2025-03-16 16:56:03.193 INFO  jdbc.audit - 1. Connection.prepareStatement(select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 order by t1_0.rounds desc limit ?,?, 1003, 1007) returned net.sf.log4jdbc.sql.jdbcapi.PreparedStatementSpy@58fbde8c
+2025-03-16 16:56:03.193 INFO  jdbc.audit - 1. PreparedStatement.setInt(1, 0) returned 
+2025-03-16 16:56:03.193 INFO  jdbc.audit - 1. PreparedStatement.setInt(2, 2000) returned 
+2025-03-16 16:56:03.193 INFO  jdbc.sqlonly - select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 order by t1_0.rounds desc limit 0,2000
+
+2025-03-16 16:56:03.194 INFO  jdbc.sqltiming - select t1_0.rounds,t1_0.degree,t1_0.ooe from thermo t1_0 order by t1_0.rounds desc limit 0,2000
+ {executed in 1 msec}
+2025-03-16 16:56:03.194 INFO  jdbc.resultset - 1. ResultSet.new ResultSet returned 
+2025-03-16 16:56:03.194 INFO  jdbc.audit - 1. PreparedStatement.executeQuery() returned net.sf.log4jdbc.sql.jdbcapi.ResultSetSpy@416a972b
+2025-03-16 16:56:03.194 INFO  jdbc.resultset - 1. ResultSet.next() returned true
+2025-03-16 16:56:03.194 INFO  jdbc.resultset - 1. ResultSet.getLong(1) returned 3023516
+2025-03-16 16:56:03.194 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.194 INFO  jdbc.resultset - 1. ResultSet.getInt(2) returned 61
+2025-03-16 16:56:03.194 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.194 INFO  jdbc.resultset - 1. ResultSet.getString(3) returned 홀
+2025-03-16 16:56:03.194 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.194 INFO  jdbc.resultset - 1. ResultSet.next() returned true
+2025-03-16 16:56:03.194 INFO  jdbc.resultset - 1. ResultSet.getLong(1) returned 3023515
+2025-03-16 16:56:03.194 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.194 INFO  jdbc.resultset - 1. ResultSet.getInt(2) returned 69
+2025-03-16 16:56:03.194 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.194 INFO  jdbc.resultset - 1. ResultSet.getString(3) returned 홀
+2025-03-16 16:56:03.194 INFO  jdbc.resultset - 1. ResultSet.wasNull() returned false
+2025-03-16 16:56:03.194 INFO  jdbc.resultsettable - 
+|--------|-------|----|
+|rounds  |degree |ooe |
+|--------|-------|----|
+|3023516 |61     |홀   |
+|3023515 |69     |홀   |
+|--------|-------|----|
+
+2025-03-16 16:56:03.194 INFO  jdbc.resultset - 1. ResultSet.next() returned false
+2025-03-16 16:56:03.194 INFO  jdbc.audit - 1. PreparedStatement.isClosed() returned false
+2025-03-16 16:56:03.194 INFO  jdbc.resultset - 1. ResultSet.close() returned void
+2025-03-16 16:56:03.194 INFO  jdbc.audit - 1. PreparedStatement.getMaxRows() returned 0
+2025-03-16 16:56:03.194 INFO  jdbc.audit - 1. PreparedStatement.getQueryTimeout() returned 0
+2025-03-16 16:56:03.194 INFO  jdbc.audit - 1. PreparedStatement.close() returned 
+2025-03-16 16:56:03.194 INFO  jdbc.audit - 1. Connection.commit() returned 
+2025-03-16 16:56:03.194 INFO  jdbc.audit - 1. Connection.setAutoCommit(true) returned 
+2025-03-16 16:56:03.194 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:56:03.194 INFO  jdbc.audit - 1. Connection.clearWarnings() returned 
+2025-03-16 16:56:15.310 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-03-16 16:56:15.412 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-03-16 16:56:15.414 INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-03-16 16:56:15.416 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2025-03-16 16:56:15.417 INFO  jdbc.audit - 1. Connection.isClosed() returned false
+2025-03-16 16:56:15.417 INFO  jdbc.connection - 1. Connection closed
+2025-03-16 16:56:15.417 INFO  jdbc.audit - 1. Connection.close() returned 
+2025-03-16 16:56:15.417 INFO  jdbc.connection - 1. Connection closed
+2025-03-16 16:56:15.417 INFO  jdbc.audit - 1. Connection.close() returned 
+2025-03-16 16:56:15.417 INFO  jdbc.audit - 2. Connection.isClosed() returned false
+2025-03-16 16:56:15.417 INFO  jdbc.connection - 2. Connection closed
+2025-03-16 16:56:15.417 INFO  jdbc.audit - 2. Connection.close() returned 
+2025-03-16 16:56:15.417 INFO  jdbc.connection - 2. Connection closed
+2025-03-16 16:56:15.417 INFO  jdbc.audit - 2. Connection.close() returned 
+2025-03-16 16:56:15.417 INFO  jdbc.audit - 3. Connection.isClosed() returned false
+2025-03-16 16:56:15.418 INFO  jdbc.connection - 3. Connection closed
+2025-03-16 16:56:15.418 INFO  jdbc.audit - 3. Connection.close() returned 
+2025-03-16 16:56:15.418 INFO  jdbc.connection - 3. Connection closed
+2025-03-16 16:56:15.418 INFO  jdbc.audit - 3. Connection.close() returned 
+2025-03-16 16:56:15.418 INFO  jdbc.audit - 4. Connection.isClosed() returned false
+2025-03-16 16:56:15.418 INFO  jdbc.connection - 4. Connection closed
+2025-03-16 16:56:15.418 INFO  jdbc.audit - 4. Connection.close() returned 
+2025-03-16 16:56:15.418 INFO  jdbc.connection - 4. Connection closed
+2025-03-16 16:56:15.418 INFO  jdbc.audit - 4. Connection.close() returned 
+2025-03-16 16:56:15.418 INFO  jdbc.audit - 5. Connection.isClosed() returned false
+2025-03-16 16:56:15.418 INFO  jdbc.connection - 5. Connection closed
+2025-03-16 16:56:15.418 INFO  jdbc.audit - 5. Connection.close() returned 
+2025-03-16 16:56:15.418 INFO  jdbc.connection - 5. Connection closed
+2025-03-16 16:56:15.418 INFO  jdbc.audit - 5. Connection.close() returned 
+2025-03-16 16:56:15.418 INFO  jdbc.audit - 6. Connection.isClosed() returned false
+2025-03-16 16:56:15.418 INFO  jdbc.connection - 6. Connection closed
+2025-03-16 16:56:15.418 INFO  jdbc.audit - 6. Connection.close() returned 
+2025-03-16 16:56:15.418 INFO  jdbc.connection - 6. Connection closed
+2025-03-16 16:56:15.418 INFO  jdbc.audit - 6. Connection.close() returned 
+2025-03-16 16:56:15.419 INFO  jdbc.audit - 7. Connection.isClosed() returned false
+2025-03-16 16:56:15.419 INFO  jdbc.connection - 7. Connection closed
+2025-03-16 16:56:15.419 INFO  jdbc.audit - 7. Connection.close() returned 
+2025-03-16 16:56:15.419 INFO  jdbc.connection - 7. Connection closed
+2025-03-16 16:56:15.419 INFO  jdbc.audit - 7. Connection.close() returned 
+2025-03-16 16:56:15.419 INFO  jdbc.audit - 8. Connection.isClosed() returned false
+2025-03-16 16:56:15.419 INFO  jdbc.connection - 8. Connection closed
+2025-03-16 16:56:15.419 INFO  jdbc.audit - 8. Connection.close() returned 
+2025-03-16 16:56:15.419 INFO  jdbc.connection - 8. Connection closed
+2025-03-16 16:56:15.419 INFO  jdbc.audit - 8. Connection.close() returned 
+2025-03-16 16:56:15.419 INFO  jdbc.audit - 9. Connection.isClosed() returned false
+2025-03-16 16:56:15.419 INFO  jdbc.connection - 9. Connection closed
+2025-03-16 16:56:15.420 INFO  jdbc.audit - 9. Connection.close() returned 
+2025-03-16 16:56:15.420 INFO  jdbc.connection - 9. Connection closed
+2025-03-16 16:56:15.420 INFO  jdbc.audit - 9. Connection.close() returned 
+2025-03-16 16:56:15.420 INFO  jdbc.audit - 10. Connection.isClosed() returned false
+2025-03-16 16:56:15.420 INFO  jdbc.connection - 10. Connection closed
+2025-03-16 16:56:15.420 INFO  jdbc.audit - 10. Connection.close() returned 
+2025-03-16 16:56:15.420 INFO  jdbc.connection - 10. Connection closed
+2025-03-16 16:56:15.420 INFO  jdbc.audit - 10. Connection.close() returned 
+2025-03-16 16:56:15.420 INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

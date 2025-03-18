@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!-- 콘솔로깅 appender -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender"> <!-- 콘솔로깅 설정 -->
+        <encoder> <!-- 로깅 패턴 -->
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!--(추가) 로그 파일 경로 --> <!-- todo: 로그파일 경로를 변경하려면 이 부분을 수정하세요. -->
+    <property name="LOG_PATH" value="/home/ubuntu/log/logs.txt"/>
+
+    <!-- (추가) 파일 로깅 appender (DailyRollingFileAppender )-->
+    <appender name="DAILY_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${LOG_PATH}</file> <!-- 로그파일 경로 및 이름 설정 -->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>app.log.%d{yyyy-MM-dd}.log</fileNamePattern> <!-- 로그파일 이름 패턴 설정 -->
+        </rollingPolicy>
+        <!-- (추가) JSON 로깅 형식 -->
+        <encoder class="ch.qos.logback.core.encoder.LayoutWrappingEncoder">
+            <layout class="ch.qos.logback.contrib.json.classic.JsonLayout" />
+        </encoder>
+        <encoder>
+            <pattern>%date{yyyy-MM-dd HH:mm:ss.SSS} %-5level %logger{36} - %msg%n</pattern>  <!-- 로깅 패턴 -->
+        </encoder>
+    </appender>
+
+    <!-- application 기본설정 -->
+    <root level="info"> <!-- 해당 레벨 이상의 로그만 출력 -->
+        <appender-ref ref="CONSOLE" /> <!-- 콘솔환경에 로깅 구현 -->
+        <appender-ref ref="DAILY_FILE"/> <!-- 파일환경에 로깅 구현 -->
+    </root>
+
+</configuration>

@@ -1,0 +1,13 @@
+package com.application.arcagambling;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class ArcaGamblingApplicationTests {
+
+    @Test
+    void contextLoads() {
+    }
+
+}

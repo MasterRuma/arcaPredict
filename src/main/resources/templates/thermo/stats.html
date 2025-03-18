@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{layout}"
+>
+<head>
+    <title>아카라이브 온도계 통계표</title>
+</head>
+<body>
+<div layout:fragment="content">
+
+    <div class="container">
+        <div class="row">
+            <h1 class="text-center h1 mb-3">숫자</h1>
+            <table class="table table-bordered text-center">
+                <tr>
+                    <td>범위</td>
+                    <td>횟수</td>
+                    <td>확률</td>
+                    <td>안나온 횟수</td>
+                </tr>
+                <tr>
+                    <td>0</td>
+                    <td th:text="${slot1.count}"></td>
+                    <td th:text="|${slot1.percent}%|"></td>
+                    <td th:text="${slot1.notFound}"></td>
+                </tr>
+                <tr>
+                    <td>1 ~ 24</td>
+                    <td th:text="${slot2.count}"></td>
+                    <td th:text="|${slot2.percent}%|"></td>
+                    <td th:text="${slot2.notFound}"></td>
+                </tr>
+                <tr>
+                    <td>25 ~ 36</td>
+                    <td th:text="${slot3.count}"></td>
+                    <td th:text="|${slot3.percent}%|"></td>
+                    <td th:text="${slot3.notFound}"></td>
+                </tr>
+                <tr>
+                    <td>37 ~ 49</td>
+                    <td th:text="${slot4.count}"></td>
+                    <td th:text="|${slot4.percent}%|"></td>
+                    <td th:text="${slot4.notFound}"></td>
+                </tr>
+                <tr>
+                    <td>50</td>
+                    <td th:text="${slot5.count}"></td>
+                    <td th:text="|${slot5.percent}%|"></td>
+                    <td th:text="${slot5.notFound}"></td>
+                </tr>
+                <tr>
+                    <td>51 ~ 62</td>
+                    <td th:text="${slot6.count}"></td>
+                    <td th:text="|${slot6.percent}%|"></td>
+                    <td th:text="${slot6.notFound}"></td>
+                </tr>
+                <tr>
+                    <td>63 ~ 74</td>
+                    <td th:text="${slot7.count}"></td>
+                    <td th:text="|${slot7.percent}%|"></td>
+                    <td th:text="${slot7.notFound}"></td>
+                </tr>
+                <tr>
+                    <td>75 ~ 99</td>
+                    <td th:text="${slot8.count}"></td>
+                    <td th:text="|${slot8.percent}%|"></td>
+                    <td th:text="${slot8.notFound}"></td>
+                </tr>
+                <tr>
+                    <td>100</td>
+                    <td th:text="${slot9.count}"></td>
+                    <td th:text="|${slot9.percent}%|"></td>
+                    <td th:text="${slot9.notFound}"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <h1 class="text-center h1 mb-3">홀짝</h1>
+            <table class="table table-bordered text-center">
+                <tr>
+                    <th>종류</th>
+                    <th>횟수</th>
+                    <th>확률</th>
+                    <th>안나온 횟수</th>
+                </tr>
+                <tr>
+                    <td>홀</td>
+                    <td th:text="${ooeO.count}"></td>
+                    <td th:text="|${ooeO.percent}%|"></td>
+                    <td th:text="${ooeO.notFound}"></td>
+                </tr>
+                <tr>
+                    <td>짝</td>
+                    <td th:text="${ooeE.count}"></td>
+                    <td th:text="|${ooeE.percent}%|"></td>
+                    <td th:text="${ooeE.notFound}"></td>
+                </tr>
+                <tr>
+                    <td>폭발</td>
+                    <td th:text="${ooeX.count}"></td>
+                    <td th:text="|${ooeX.percent}%|"></td>
+                    <td th:text="${ooeX.notFound}"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+</body>

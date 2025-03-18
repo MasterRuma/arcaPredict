@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{layout}"
+>
+<head>
+    <title>아카라이브 나무게임 통계표</title>
+</head>
+<body>
+<div layout:fragment="content">
+
+    <div class="container">
+        <div class="row">
+            <h1 class="text-center h1 mb-3">숫자</h1>
+            <table class="table table-bordered text-center">
+                <tr>
+                    <td>슬롯</td>
+                    <td>횟수</td>
+                    <td>확률</td>
+                    <td>이론 확률</td>
+                    <td>안나온 횟수</td>
+                </tr>
+                <tr>
+                    <td>1번 슬롯</td>
+                    <td th:text="${slot1.count}"></td>
+                    <td th:text="|${slot1.percent}%|"></td>
+                    <td>3.125%</td>
+                    <td th:text="${slot1.notFound}"></td>
+                </tr>
+                <tr>
+                    <td>2번 슬롯</td>
+                    <td th:text="${slot2.count}"></td>
+                    <td th:text="|${slot2.percent}%|"></td>
+                    <td>15.625%</td>
+                    <td th:text="${slot2.notFound}"></td>
+                </tr>
+                <tr>
+                    <td>3번 슬롯</td>
+                    <td th:text="${slot3.count}"></td>
+                    <td th:text="|${slot3.percent}%|"></td>
+                    <td>31.25%</td>
+                    <td th:text="${slot3.notFound}"></td>
+                </tr>
+                <tr>
+                    <td>4번 슬롯</td>
+                    <td th:text="${slot4.count}"></td>
+                    <td th:text="|${slot4.percent}%|"></td>
+                    <td>31.25%</td>
+                    <td th:text="${slot4.notFound}"></td>
+                </tr>
+                <tr>
+                    <td>5번 슬롯</td>
+                    <td th:text="${slot5.count}"></td>
+                    <td th:text="|${slot5.percent}%|"></td>
+                    <td>15.625%</td>
+                    <td th:text="${slot5.notFound}"></td>
+                </tr>
+                <tr>
+                    <td>6번 슬롯</td>
+                    <td th:text="${slot6.count}"></td>
+                    <td th:text="|${slot6.percent}%|"></td>
+                    <td>3.125%</td>
+                    <td th:text="${slot6.notFound}"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <h1 class="text-center h1 mb-3">군집</h1>
+            <table class="table table-bordered text-center">
+                <tr>
+                    <th>번호</th>
+                    <th>횟수</th>
+                    <th>확률</th>
+                    <th>이론 확률</th>
+                    <th>안나온 횟수</th>
+                </tr>
+                <tr>
+                    <td>1 ~ 3</td>
+                    <td th:text="${armyL.count}"></td>
+                    <td th:text="|${armyL.percent}%|"></td>
+                    <td>50%</td>
+                    <td th:text="${armyL.notFound}"></td>
+                </tr>
+                <tr>
+                    <td>4 ~ 6</td>
+                    <td th:text="${armyR.count}"></td>
+                    <td th:text="|${armyR.percent}%|"></td>
+                    <td>50%</td>
+                    <td th:text="${armyR.notFound}"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <h1 class="text-center h1 mb-3">홀짝</h1>
+            <table class="table table-bordered text-center">
+                <tr>
+                    <th>종류</th>
+                    <th>횟수</th>
+                    <th>확률</th>
+                    <th>이론 확률</th>
+                    <th>안나온 횟수</th>
+                </tr>
+                <tr>
+                    <td>홀</td>
+                    <td th:text="${ooeO.count}"></td>
+                    <td th:text="|${ooeO.percent}%|"></td>
+                    <td>50%</td>
+                    <td th:text="${ooeO.notFound}"></td>
+                </tr>
+                <tr>
+                    <td>짝</td>
+                    <td th:text="${ooeE.count}"></td>
+                    <td th:text="|${ooeE.percent}%|"></td>
+                    <td>50%</td>
+                    <td th:text="${ooeE.notFound}"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <h1 class="text-center h1 mb-3">처음 방향</h1>
+            <table class="table table-bordered text-center">
+                <tr>
+                    <th>종류</th>
+                    <th>횟수</th>
+                    <th>확률</th>
+                    <th>이론 확률</th>
+                    <th>안나온 횟수</th>
+                </tr>
+                <tr>
+                    <td>좌</td>
+                    <td th:text="${lorL.count}"></td>
+                    <td th:text="|${lorL.percent}%|"></td>
+                    <td>50%</td>
+                    <td th:text="${lorL.notFound}"></td>
+                </tr>
+                <tr>
+                    <td>우</td>
+                    <td th:text="${lorR.count}"></td>
+                    <td th:text="|${lorR.percent}%|"></td>
+                    <td>50%</td>
+                    <td th:text="${lorR.notFound}"></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+</body>

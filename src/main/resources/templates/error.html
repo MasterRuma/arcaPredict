@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko" layout:decorate="~{layout}" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오류 페이지</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <style>
+        .error-container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            box-shadow: 2px 2px 12px rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+        h1 {
+            color: #ff6b6b;
+            font-size: 2em;
+        }
+        p {
+            color: #ffffff;
+            font-size: 1.2em;
+        }
+        a {
+            color: #1e90ff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div class="error-container" layout:fragment="content">
+    <h1>오류 발생!</h1>
+    <p th:text="${status + ' - ' + error}">요청을 처리하는 중 오류가 발생했습니다.</p>
+    <p th:text="${message}"></p>
+    <p><a href="/">홈으로 돌아가기</a></p>
+</div>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html
+        layout:decorate="~{layout}"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+<head>
+  <title>아카라이브 도박 예측기록기</title>
+  <style>
+    .container {
+      text-align: center;
+    }
+    .button-group {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+    .navbar-toggler {
+      position: fixed;
+      left: 15px;
+      top: 15px;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    @media (max-width: 992px) {
+      .d-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .button-group {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+      }
+      .btn {
+        width: 90%;
+        margin: 5px auto;
+        display: block;
+        text-align: center;
+      }
+    }
+    @media (max-width: 576px) {
+      .btn {
+        width: 100%;
+        font-size: 1rem;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.5rem;
+      }
+      p {
+        font-size: 0.9rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<nav>
+  <button class="navbar-toggler">☰</button>
+</nav>
+<div layout:fragment="content">
+  <div class="container">
+    <h1>아카라이브 도박 예측기록기</h1>
+    <p>본 값은 참고용으로 부탁드립니다!</p>
+    <div class="d-grid gap-5 row gx-5" style="margin-top: 3em">
+      <!-- 첫 번째 열 -->
+      <div class="button-group">
+        <button class="btn btn-success btn-lg" onclick="location.href='/tree/predict'">
+          나무게임 예측기
+        </button>
+        <button class="btn btn-success btn-lg" onclick="location.href='/thermo/predict'">
+          온도계 예측기
+        </button>
+      </div>
+      <!-- 두 번째 열 -->
+      <div class="button-group">
+        <button class="btn btn-success btn-lg" onclick="location.href='/tree/list'">
+          나무게임 기록기
+        </button>
+        <button class="btn btn-success btn-lg" onclick="location.href='/thermo/list'">
+          온도계 기록기
+        </button>
+      </div>
+      <!-- 세 번째 열 -->
+      <div class="button-group">
+        <button class="btn btn-success btn-lg" onclick="location.href='/tree/stats?select=1000'">
+          나무게임 통계표
+        </button>
+        <button class="btn btn-success btn-lg" onclick="location.href='/thermo/stats?select=2000'">
+          온도계 통계표
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
