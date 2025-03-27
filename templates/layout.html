@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+>
+<head>
+  <link rel="stylesheet" th:href="@{/css/bootstrap.css}"/>
+  <link th:href="@{/css/sidebars.css}" rel="stylesheet"/>
+  <style>
+    #sidebar {
+      position: fixed;
+      left: -280px;
+      top: 0;
+      height: 100%;
+      width: 280px;
+      background: var(--sidebar-bg);
+      transition: left 0.3s ease;
+      box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+      z-index: 1050;
+    }
+
+    #sidebar.active {
+      left: 0;
+    }
+
+    #overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      display: none;
+      z-index: 1040;
+    }
+
+    #overlay.active {
+      display: block;
+    }
+
+    :root {
+      --sidebar-bg: #f8f9fa;
+      --overlay-bg: rgba(0, 0, 0, 0.5);
+    }
+
+    [data-bs-theme="dark"] {
+      --sidebar-bg: #343a40;
+      --overlay-bg: rgba(255, 255, 255, 0.1);
+    }
+
+    .hamburger {
+      font-size: 24px;
+      padding: 10px 15px;
+    }
+  </style>
+  <script>
+    function setThemeBasedOnSystem() {
+      const isDarkMode = window.matchMedia(
+              "(prefers-color-scheme: dark)"
+      ).matches;
+      document.documentElement.setAttribute(
+              "data-bs-theme",
+              isDarkMode ? "dark" : "light"
+      );
+    }
+
+    setThemeBasedOnSystem();
+    window
+            .matchMedia("(prefers-color-scheme: dark)")
+            .addEventListener("change", setThemeBasedOnSystem);
+
+    function toggleSidebar() {
+      const sidebar = document.getElementById("sidebar");
+      const overlay = document.getElementById("overlay");
+      const isActive = sidebar.classList.toggle("active");
+      overlay.classList.toggle("active", isActive);
+    }
+
+    function closeSidebar() {
+      document.getElementById("sidebar").classList.remove("active");
+      document.getElementById("overlay").classList.remove("active");
+    }
+  </script>
+</head>
+<body>
+<header>
+  <button class="btn hamburger text-start" onclick="toggleSidebar()">&#9776;</button>
+  <div id="sidebar">
+    <div class="flex-shrink-0 p-3">
+      <a
+              href="/"
+              class="d-flex align-items-center pb-3 mb-3 link-body-emphasis text-decoration-none border-bottom"
+      >
+        <span class="fs-5 fw-semibold">도박 기록 예측기</span>
+      </a>
+      <ul class="list-unstyled ps-0">
+        <li class="mb-1">
+          <button
+                  class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#home-collapse"
+                  aria-expanded="false"
+          >
+            바로가기
+          </button>
+          <div class="collapse" id="home-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li>
+                <a
+                        href="/"
+                        class="link-body-emphasis d-inline-flex text-decoration-none rounded"
+                >메인화면</a
+                >
+              </li>
+              <li>
+                <a
+                        href="https://arca.live/b/namugame"
+                        class="link-body-emphasis d-inline-flex text-decoration-none rounded"
+                >나무게임</a
+                >
+              </li>
+              <li>
+                <a
+                        href="https://arca.live/b/thermometer"
+                        class="link-body-emphasis d-inline-flex text-decoration-none rounded"
+                >온도계</a
+                >
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="mb-1">
+          <button
+                  class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#dashboard-collapse"
+                  aria-expanded="false"
+          >
+            나무게임
+          </button>
+          <div class="collapse" id="dashboard-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li>
+                <a
+                        href="/tree/predict"
+                        class="link-body-emphasis d-inline-flex text-decoration-none rounded"
+                >예측 사이트</a
+                >
+              </li>
+              <li>
+                <a
+                        href="/tree/list"
+                        class="link-body-emphasis d-inline-flex text-decoration-none rounded"
+                >기록 사이트</a
+                >
+              </li>
+              <li>
+                <a
+                        href="/tree/stats?select=1000"
+                        class="link-body-emphasis d-inline-flex text-decoration-none rounded"
+                >통계 사이트</a
+                >
+              </li>
+            </ul>
+          </div>
+        </li>
+        <li class="mb-1">
+          <button
+                  class="btn btn-toggle d-inline-flex align-items-center rounded border-0 collapsed"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#orders-collapse"
+                  aria-expanded="false"
+          >
+            온도계
+          </button>
+          <div class="collapse" id="orders-collapse">
+            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+              <li>
+                <a
+                        href="/thermo/predict"
+                        class="link-body-emphasis d-inline-flex text-decoration-none rounded"
+                >예측 사이트</a
+                >
+              </li>
+              <li>
+                <a
+                        href="/thermo/list"
+                        class="link-body-emphasis d-inline-flex text-decoration-none rounded"
+                >기록 사이트</a
+                >
+              </li>
+              <li>
+                <a
+                        href="/thermo/stats?select=2000"
+                        class="link-body-emphasis d-inline-flex text-decoration-none rounded"
+                >통계 사이트</a
+                >
+              </li>
+            </ul>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div id="overlay" onclick="closeSidebar()"></div>
+</header>
+<div layout:fragment="content"></div>
+<script th:src="@{/js/bootstrap.bundle.js}"></script>
+<script th:src="@{/js/sidebars.js}"></script>
+</body>
+</html>

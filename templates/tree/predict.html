@@ -1,0 +1,37 @@
+<!doctype html>
+<html
+        xmlns:th="http://www.thymeleaf.org"
+        xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+        layout:decorate="~{layout}">
+<head>
+    <title>아카라이브 나무게임 예측 사이트</title>
+    <style>
+        .container-table {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+    </style>
+
+</head>
+<body>
+<div layout:fragment="content">
+    <div class="mt-5 pt-5 container-table">
+        <h1 class="text-center mb-4">나무게임 예측</h1>
+        <table class="table table-bordered text-center p-5">
+            <tr>
+                <th>숫자</th>
+                <th>방향</th>
+            </tr>
+            <tr>
+                <td th:text="${treeDto.number}"></td>
+                <td th:text="${treeDto.direction}"></td>
+            </tr>
+        </table>
+        <small style="display: block; text-align: right;" th:text="|마지막 업데이트 일자 : ${#temporals.format(treeDto.time, 'YYYY-MM-dd HH:mm:ss')}|"></small>
+    </div>
+    <div class="mt-5 text-center">
+        <a th:text="|최근 당첨 내역 : ${recent.rounds} 라운드 / ${recent.number} / ${recent.lor}|"></a>
+    </div>
+</div>
+</body>
+</html>

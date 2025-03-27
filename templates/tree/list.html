@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html layout:decorate="~{layout}"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>아카라이브 나무게임 기록기</title>
+    <script th:src="@{/js/jquery-3.7.1.min.js}"></script>
+    <style>
+        /* 테이블 하단에만 border 추가 */
+        .table-bordered td {
+            border-bottom: 1px solid #dee2e6;
+        }
+    </style>
+    <script>
+        $().ready(function () {
+            let currentPage = 1;
+            $("[type='button']").click(function () {
+                let value = $("#number").val();
+                let isNumericOnly = /^[0-9]+$/.test(value);
+                let isZeroOrMinus = parseInt($("#number").val()) <= 0
+                let isShortLength = value.length < 9;
+                if (!isZeroOrMinus && isNumericOnly && isShortLength) {
+                $.ajax({
+                    type: "POST",
+                    url: "/tree/list",
+                    data: {
+                        number: $("#number").val(),
+                    },
+                    success: function (datas) {
+                        if (datas.content.content && Array.isArray(datas.content.content)) {
+                            $("#chooseNumber").val($("#number").val())
+
+                            // 테이블 초기화
+                            $("#table").empty();
+
+                            // 헤더 추가
+                            let header = "<tr class='text-center bg-primary text-white'>";
+                            header += "<th>라운드</th>";
+                            header += "<th>숫자</th>";
+                            header += "<th>군집</th>";
+                            header += "<th>홀짝</th>";
+                            header += "<th>첫 방향</th>";
+                            header += "</tr>";
+                            $("#table").append(header);
+
+                            // 데이터 추가
+                            datas.content.content.forEach(function (tree) {
+                                let row = "<tr class='text-center'>";
+                                row += "<td>" + tree.rounds + "회차</td>";
+                                row += "<td>" + tree.number + "</td>";
+                                row += "<td>" + tree.army + "</td>";
+                                row += "<td>" + tree.ooe + "</td>";
+                                row += "<td>" + tree.lor + "</td>";
+                                row += "</tr>";
+                                $("#table").append(row);
+                            });
+
+                            currentPage = datas.currentPage;
+                            maxPage = datas.page + 1;
+
+                            if (maxPage == 0) {
+                                maxPage = 1;
+                            }
+
+                            // 기존 버튼 영역 초기화 (중복 방지)
+                            $("#control").empty();
+
+                            // 버튼 HTML 구성 및 추가
+                            let controlsHtml =
+                                "<div id='pagination' class='d-flex justify-content-center align-items-center' style='margin-top: 10px;'>" +
+                                "<button id='prevPage' class='btn btn-primary mx-2'>이전</button>" +
+                                "<span id='pageInfo'>" + currentPage + " / " + maxPage + "</span>" +
+                                "<button id='nextPage' class='btn btn-primary mx-2'>다음</button></div>" +
+                                "<div class='d-flex justify-content-end'>" +
+                                `<a id='downloadCSV' class='btn btn-success' style='margin-top: 10px;' href='/tree/downloadCSV?number=${$("#chooseNumber").val()}&page=${currentPage - 1}'>CSV 다운로드</a>` +
+                                "</div>";
+
+                            $("#control").append(controlsHtml);
+                        } else {
+                            console.error("올바른 데이터 형식이 아닙니다.", datas);
+                        }
+                    }
+                });
+                } else {
+                    alert("올바른 표현식이 아닙니다.")
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+<div layout:fragment="content">
+    <div class="container">
+        <!-- 입력 및 조회 버튼 -->
+        <div class="column mb-4 d-flex justify-content-center align-items-center" style="gap: 5px">
+            <input type="number" id="number" class="col-form-label-lg">
+            <input type="button" value="조회" class="btn btn-secondary btn-lg">
+            <input type="hidden" id="chooseNumber" readonly>
+        </div>
+
+        <!-- 테이블 영역 (border와 hover 적용됨) -->
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover" id="table"></table>
+        </div>
+
+        <!-- 페이지네이션 및 CSV 다운로드 버튼 영역 -->
+        <div id="control"></div>
+        <script>
+            // 이전 페이지 버튼 클릭 이벤트 처리
+            $(document).on("click", "#prevPage", function () {
+                let all = $("#pageInfo").text();
+                let currentPage = parseInt(all.toString().split(" / ")[0]);
+                currentPage--;
+                if (currentPage > 0) {
+                    $.ajax({
+                        type: "POST",
+                        url: "/tree/listWithPage",
+                        data: {
+                            number: $("#chooseNumber").val(),
+                            page: currentPage - 1
+                        },
+                        success: function (datas) {
+                            if (datas.content.content && Array.isArray(datas.content.content)) {
+                                // 테이블 초기화
+                                $("#table").empty();
+
+                                // 헤더 추가
+                                let header = "<tr class='text-center bg-primary text-white'>";
+                                header += "<th>라운드</th>";
+                                header += "<th>숫자</th>";
+                                header += "<th>군집</th>";
+                                header += "<th>홀짝</th>";
+                                header += "<th>첫 방향</th>";
+                                header += "</tr>";
+                                $("#table").append(header);
+
+                                // 데이터 추가
+                                datas.content.content.forEach(function (tree) {
+                                    let row = "<tr class='text-center'>";
+                                    row += "<td>" + tree.rounds + "회차</td>";
+                                    row += "<td>" + tree.number + "</td>";
+                                    row += "<td>" + tree.army + "</td>";
+                                    row += "<td>" + tree.ooe + "</td>";
+                                    row += "<td>" + tree.lor + "</td>";
+                                    row += "</tr>";
+                                    $("#table").append(row);
+                                });
+
+                                currentPage = datas.currentPage + 1;
+                                maxPage = datas.page + 1;
+
+                                if (maxPage == 0) {
+                                    maxPage = 1;
+                                }
+
+                                // 기존 버튼 영역 초기화 (중복 방지)
+                                $("#control").empty();
+
+                                // 버튼 HTML 구성 및 추가
+                                let controlsHtml =
+                                    "<div id='pagination' class='d-flex justify-content-center align-items-center' style='margin-top: 10px;'>" +
+                                    "<button id='prevPage' class='btn btn-primary mx-2'>이전</button>" +
+                                    "<span id='pageInfo'>" + currentPage + " / " + maxPage + "</span>" +
+                                    "<button id='nextPage' class='btn btn-primary mx-2'>다음</button></div>" +
+                                    "<div class='d-flex justify-content-end'>" +
+                                    `<a id='downloadCSV' class='btn btn-success' style='margin-top: 10px;' href='/tree/downloadCSV?number=${$("#chooseNumber").val()}&page=${currentPage - 1}'>CSV 다운로드</a>` +
+                                    "</div>";
+
+                                $("#control").append(controlsHtml);
+                            } else {
+                                console.error("올바른 데이터 형식이 아닙니다.", datas);
+                            }
+                        }
+                    })
+                } else {
+                    alert("첫 페이지입니다.");
+                }
+            });
+
+            // 다음 페이지 버튼 클릭 이벤트 처리
+            $(document).on("click", "#nextPage", function () {
+                let all = $("#pageInfo").text();
+                let currentPage = parseInt(all.toString().split(" / ")[0]);
+                let maxPage = parseInt(all.toString().split(" / ")[1]);
+                currentPage--;
+                if (currentPage < maxPage - 1) {
+                    {
+                        $.ajax({
+                            type: "POST",
+                            url: "/tree/listWithPage",
+                            data: {
+                                number: $("#chooseNumber").val(),
+                                page: currentPage + 1
+                            },
+                            success: function (datas) {
+                                if (datas.content.content && Array.isArray(datas.content.content)) {
+                                    // 테이블 초기화
+                                    $("#table").empty();
+
+                                    // 헤더 추가
+                                    let header = "<tr class='text-center bg-primary text-white'>";
+                                    header += "<th>라운드</th>";
+                                    header += "<th>숫자</th>";
+                                    header += "<th>군집</th>";
+                                    header += "<th>홀짝</th>";
+                                    header += "<th>첫 방향</th>";
+                                    header += "</tr>";
+                                    $("#table").append(header);
+
+                                    // 데이터 추가
+                                    datas.content.content.forEach(function (tree) {
+                                        let row = "<tr class='text-center'>";
+                                        row += "<td>" + tree.rounds + "회차</td>";
+                                        row += "<td>" + tree.number + "</td>";
+                                        row += "<td>" + tree.army + "</td>";
+                                        row += "<td>" + tree.ooe + "</td>";
+                                        row += "<td>" + tree.lor + "</td>";
+                                        row += "</tr>";
+                                        $("#table").append(row);
+                                    });
+
+                                    currentPage = datas.currentPage + 1;
+                                    const maxPage = datas.page + 1;
+
+                                    // 기존 버튼 영역 초기화 (중복 방지)
+                                    $("#control").empty();
+
+                                    // 버튼 HTML 구성 및 추가
+                                    let controlsHtml =
+                                        "<div id='pagination' class='d-flex justify-content-center align-items-center' style='margin-top: 10px;'>" +
+                                        "<button id='prevPage' class='btn btn-primary mx-2'>이전</button>" +
+                                        "<span id='pageInfo'>" + currentPage + " / " + maxPage + "</span>" +
+                                        "<button id='nextPage' class='btn btn-primary mx-2'>다음</button></div>" +
+                                        "<div class='d-flex justify-content-end'>" +
+                                        `<a id='downloadCSV' class='btn btn-success' style='margin-top: 10px;' href='/tree/downloadCSV?number=${$("#chooseNumber").val()}&page=${currentPage - 1}'>CSV 다운로드</a>` +
+                                        "</div>";
+
+                                    $("#control").append(controlsHtml);
+
+                                } else {
+                                    console.error("올바른 데이터 형식이 아닙니다.", datas);
+                                }
+                            }
+                        })
+                    }
+                } else {
+                    alert("마지막 페이지입니다.");
+                }
+            });
+        </script>
+    </div>
+</div>
+</body>
+</html>
